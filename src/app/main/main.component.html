@@ -5,45 +5,24 @@
 <div class="container margin-h-25">
 
   <div class="col">
-    <h4>Buy</h4>
-
-    <table mat-table [dataSource]="dataSource" matSort matSortActive="Rate" matSortDirection="asc" matSortDisableClear class="mat-elevation-z8">
-
-      <ng-container matColumnDef="Quantity">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Quantity </th>
-        <td mat-cell *matCellDef="let element"> {{element.Quantity}} </td>
-      </ng-container>
-    
-      <ng-container matColumnDef="Rate">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Rate </th>
-        <td mat-cell *matCellDef="let element"> {{element.Rate}} </td>
-      </ng-container>
-    
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    </table>
-      <mat-paginator [pageSizeOptions]="[5]"></mat-paginator>
+    <app-bittrex-buy-usd-btc></app-bittrex-buy-usd-btc>
   </div>
   <div class="col">
-    <h4>Sell</h4>
+    <app-bittrex-sell-usd-btc></app-bittrex-sell-usd-btc>
+  </div>
+</div>
 
-    <table mat-table [dataSource]="dataSource2" matSort matSortActive="Rate" matSortDirection="desc" matSortDisableClear class="mat-elevation-z8">
+<div class="margin-h-25">
+  <h2>Bittrex ETH-BTC Last Offers</h2>
+ <p>5 most valuable to sell and 5 most cheapest to buy</p>
+</div>
+<div class="container margin-h-25">
 
-      <ng-container matColumnDef="Quantity">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Quantity </th>
-        <td mat-cell *matCellDef="let element"> {{element.Quantity}} </td>
-      </ng-container>
-    
-      <ng-container matColumnDef="Rate">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Rate </th>
-        <td mat-cell *matCellDef="let element"> {{element.Rate}} </td>
-      </ng-container>
-    
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    </table>
-      <mat-paginator [pageSizeOptions]="[5]"></mat-paginator>
-    
+  <div class="col">
+   <!-- Dodać-->
+  </div>
+  <div class="col">
+    <!-- Dodać-->
   </div>
 </div>
 
