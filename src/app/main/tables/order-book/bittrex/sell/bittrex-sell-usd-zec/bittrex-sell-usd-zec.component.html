@@ -1,0 +1,18 @@
+<h4>Sell</h4>
+
+<table mat-table [dataSource]="dataSource" matSort matSortActive="Rate" matSortDirection="desc" matSortDisableClear class="mat-elevation-z8">
+
+  <ng-container matColumnDef="Quantity">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Quantity </th>
+    <td mat-cell *matCellDef="let element"> {{element.Quantity}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="Rate">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Rate </th>
+    <td mat-cell *matCellDef="let element"> {{element.Rate}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+  <mat-paginator [pageSizeOptions]="[5]"></mat-paginator>

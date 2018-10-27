@@ -4,3 +4,23 @@
 html, body{
     font-family: 'PT Sans', sans-serif;
 }
+
+.order-book table {
+    width: 100%;
+  }
+.order-book .margin-h-25{
+  margin: 0 25px;
+}
+.order-book .container {
+  display: flex;
+  flex-direction: row;
+}
+.order-book .container > .col {
+  width: 50%;
+}
+.order-book .container > .col:nth-child(1) {
+  margin-right: 2%;
+}
+.order-book mat-paginator {
+  display: none;
+}
