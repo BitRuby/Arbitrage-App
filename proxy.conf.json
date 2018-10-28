@@ -1,10 +1,27 @@
 {
-    "/api/*": {
+    "/api/bittrex/*": {
         "target": "https://bittrex.com/api/v1.1/public/",
         "secure": false,
         "pathRewrite": {
-            "^/api": ""
+            "^/api/bittrex": ""
+        },
+        "changeOrigin": true
+    },
+    "/api/bitfinex/*": {
+        "target": "https://api.bitfinex.com/v1/",
+        "secure": false,
+        "pathRewrite": {
+            "^/api/bitfinex": ""
+        },
+        "changeOrigin": true
+    },
+    "/api/coinbase/*": {
+        "target": "https://api.pro.coinbase.com/",
+        "secure": false,
+        "pathRewrite": {
+            "^/api/coinbase": ""
         },
         "changeOrigin": true
     }
 }
+//kraken digifinex

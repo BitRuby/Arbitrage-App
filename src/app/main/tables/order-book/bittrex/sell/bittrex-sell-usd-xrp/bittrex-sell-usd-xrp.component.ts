@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { MatSort, MatTableDataSource, MatPaginator } from '@angular/material';
-import { OrderBookService } from 'src/app/core/order-book/order-book.service';
+import { OrderBookBittrexService } from 'src/app/core/order-book-bittrex/order-book-bittrex.service';
+
 @Component({
   selector: 'app-bittrex-sell-usd-xrp',
   templateUrl: './bittrex-sell-usd-xrp.component.html',
@@ -12,7 +13,7 @@ export class BittrexSellUsdXrpComponent implements OnInit, AfterViewInit {
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
-  constructor(private orderBookService: OrderBookService) {
+  constructor(private orderBookService: OrderBookBittrexService) {
     this.getTransfers();
   }
 

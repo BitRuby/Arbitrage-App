@@ -4,7 +4,13 @@
 html, body{
     font-family: 'PT Sans', sans-serif;
 }
-
+.markets {
+  display: flex;
+  flex-direction: row;
+}
+.market-row{
+  width:50%;
+}
 .order-book table {
     width: 100%;
   }
@@ -16,7 +22,7 @@ html, body{
   flex-direction: row;
 }
 .order-book .container > .col {
-  width: 50%;
+  width: 100%;
 }
 .order-book .container > .col:nth-child(1) {
   margin-right: 2%;

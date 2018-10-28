@@ -17,7 +17,21 @@ import { BittrexSellUsdZecComponent } from './tables/order-book/bittrex/sell/bit
 import { CommonModule } from '@angular/common';
 import { MatListModule, MatTableModule, MatGridListModule, MatSortModule, MatPaginatorModule } from '@angular/material';
 import { MainRoutingModule } from './main-routing.module';
-import { OrderBookService } from '../core/order-book/order-book.service';
+import { OrderBookBittrexService } from '../core/order-book-bittrex/order-book-bittrex.service';
+import { BitfinexBuyUsdAdaComponent } from './tables/order-book/bitfinex/buy/bitfinex-buy-usd-ada/bitfinex-buy-usd-ada.component';
+import { BitfinexBuyUsdBtcComponent } from './tables/order-book/bitfinex/buy/bitfinex-buy-usd-btc/bitfinex-buy-usd-btc.component';
+import { BitfinexBuyUsdEthComponent } from './tables/order-book/bitfinex/buy/bitfinex-buy-usd-eth/bitfinex-buy-usd-eth.component';
+import { BitfinexBuyUsdLtcComponent } from './tables/order-book/bitfinex/buy/bitfinex-buy-usd-ltc/bitfinex-buy-usd-ltc.component';
+import { BitfinexBuyUsdUsdtComponent } from './tables/order-book/bitfinex/buy/bitfinex-buy-usd-usdt/bitfinex-buy-usd-usdt.component';
+import { BitfinexBuyUsdXrpComponent } from './tables/order-book/bitfinex/buy/bitfinex-buy-usd-xrp/bitfinex-buy-usd-xrp.component';
+import { BitfinexBuyUsdZecComponent } from './tables/order-book/bitfinex/buy/bitfinex-buy-usd-zec/bitfinex-buy-usd-zec.component';
+import { BitfinexSellUsdAdaComponent } from './tables/order-book/bitfinex/sell/bitfinex-sell-usd-ada/bitfinex-sell-usd-ada.component';
+import { BitfinexSellUsdBtcComponent } from './tables/order-book/bitfinex/sell/bitfinex-sell-usd-btc/bitfinex-sell-usd-btc.component';
+import { BitfinexSellUsdEthComponent } from './tables/order-book/bitfinex/sell/bitfinex-sell-usd-eth/bitfinex-sell-usd-eth.component';
+import { BitfinexSellUsdLtcComponent } from './tables/order-book/bitfinex/sell/bitfinex-sell-usd-ltc/bitfinex-sell-usd-ltc.component';
+import { BitfinexSellUsdUsdtComponent } from './tables/order-book/bitfinex/sell/bitfinex-sell-usd-usdt/bitfinex-sell-usd-usdt.component';
+import { BitfinexSellUsdXrpComponent } from './tables/order-book/bitfinex/sell/bitfinex-sell-usd-xrp/bitfinex-sell-usd-xrp.component';
+import { BitfinexSellUsdZecComponent } from './tables/order-book/bitfinex/sell/bitfinex-sell-usd-zec/bitfinex-sell-usd-zec.component';
 
 
 
@@ -37,7 +51,21 @@ import { OrderBookService } from '../core/order-book/order-book.service';
     BittrexSellUsdLtcComponent,
     BittrexSellUsdUsdtComponent,
     BittrexSellUsdXrpComponent,
-    BittrexSellUsdZecComponent
+    BittrexSellUsdZecComponent,
+    BitfinexBuyUsdAdaComponent,
+    BitfinexBuyUsdBtcComponent,
+    BitfinexBuyUsdEthComponent,
+    BitfinexBuyUsdLtcComponent,
+    BitfinexBuyUsdUsdtComponent,
+    BitfinexBuyUsdXrpComponent,
+    BitfinexBuyUsdZecComponent,
+    BitfinexSellUsdAdaComponent,
+    BitfinexSellUsdBtcComponent,
+    BitfinexSellUsdEthComponent,
+    BitfinexSellUsdLtcComponent,
+    BitfinexSellUsdUsdtComponent,
+    BitfinexSellUsdXrpComponent,
+    BitfinexSellUsdZecComponent
   ],
   imports: [
     CommonModule,
@@ -49,7 +77,7 @@ import { OrderBookService } from '../core/order-book/order-book.service';
     MainRoutingModule
   ],
   providers: [
-    OrderBookService
+    OrderBookBittrexService
   ]
 })
 export class MainModule { }
