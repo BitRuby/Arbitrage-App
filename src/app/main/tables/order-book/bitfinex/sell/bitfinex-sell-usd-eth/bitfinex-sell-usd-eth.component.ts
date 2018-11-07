@@ -29,7 +29,7 @@ export class BitfinexSellUsdEthComponent implements OnInit, AfterViewInit {
     this.orderBookService.getOrderBookBitfinex(currency1, currency2)
       .subscribe(orders => {
         if (!orders) { return; }
-        this.dataSource = new MatTableDataSource(orders.bids as {}[]);
+        this.dataSource = new MatTableDataSource(orders.asks as {}[]);
         this.dataSource.sort = this.sort;
         this.dataSource.paginator = this.paginator;
       });

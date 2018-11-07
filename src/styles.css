@@ -9,12 +9,12 @@ html, body{
   flex-direction: row;
 }
 .market-row{
-  width:50%;
+  width:25%;
 }
 .order-book table {
     width: 100%;
   }
-.order-book .margin-h-25{
+.order-book{
   margin: 0 25px;
 }
 .order-book .container {
