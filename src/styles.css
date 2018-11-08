@@ -22,7 +22,7 @@ th.mat-header-cell:last-of-type {
 th.mat-header-cell:last-of-type {
   background: #262728; 
 }
-th.mat-header-cell .mat-sort-header-container{
+th .mat-sort-header-container{
   justify-content: center !important;
   line-height: 38px;
 }
@@ -61,4 +61,53 @@ td.mat-cell:last-of-type {
 }
 .mat-paginator {
   display: none !important;
+}
+/* Custom table styles */
+.custom-table {
+
+}
+.table-header {
+  display: flex;
+  flex-direction: row;
+  height: 56px;
+}
+.table-header th:first-of-type,
+th:last-of-type {
+  background: #FBD026;
+  color: #FFF;
+  margin: 5px;
+  width: 150px;
+  height: 40px;
+  padding: 0 !important;
+  border-bottom-style: none;
+  font-size: 12px;
+  font-weight: 500;
+}
+.table-header th:last-of-type {
+  background: #262728; 
+}
+.table-row {
+  border: 1px solid #BFBFBF !important;
+  background: #FCFCFC;
+  display: flex;
+  flex-direction: column;
+  margin: 15px 5px;
+  margin-top: 0;
+  height: 70px !important;
+}
+.table-row td:first-of-type, td:last-of-type{
+  display: flex;
+  flex-direction: column;
+  border: 0;
+  padding: 0 !important;
+  text-align: center;
+}
+.table-row td:first-of-type {
+  font-weight: 700;
+  font-size: 1.7em;
+  padding-top: 10px !important;
+}
+.table-row td:last-of-type {
+  line-height: 10px;
+  font-size: 14px;
 }

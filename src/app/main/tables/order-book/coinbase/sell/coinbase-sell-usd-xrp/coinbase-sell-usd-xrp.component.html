@@ -1,14 +1,14 @@
 
     <h4>Sell</h4>
 
-    <table matSort (matSortChange)="sortData($event)" matSortDisableClear>
-      <tr>
+    <table matSort (matSortChange)="sortData($event)" matSortDisableClear class="table-custom">
+      <tr class="table-header">
+          <th mat-sort-header="rate">Price</th>
         <th mat-sort-header="quantity">Quantity</th>
-        <th mat-sort-header="rate">Rate</th>
       </tr>
     
-      <tr *ngFor="let element of sortedData; let i = index">
-        <td *ngIf="i<6">{{element[1]}}</td>
-        <td *ngIf="i<6">{{element[0]}}</td>
+      <tr *ngFor="let element of sortedData | slice:0:5; let i=index" class="table-row">
+        <td>{{element[0]}}</td>
+        <td>{{element[1]}}</td>
       </tr>
     </table>
