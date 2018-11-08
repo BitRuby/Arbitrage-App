@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { OrderBookBitstamp } from 'src/app/core/order-book-bitstamp/order-book-bitstamp.model';
 import { OrderBookCoinbaseService } from 'src/app/core/order-book-coinbase/order-book-coinbase.service';
 import { Sort } from '@angular/material';
+import { OrderBookCoinbase } from 'src/app/core/order-book-coinbase/order-book-coinbase.model';
 
 @Component({
   selector: 'app-coinbase-sell-usd-ada',
@@ -10,7 +10,7 @@ import { Sort } from '@angular/material';
 })
 export class CoinbaseSellUsdAdaComponent implements OnInit {
   dataSource;
-  sortedData: OrderBookBitstamp['asks'];
+  sortedData: OrderBookCoinbase['asks'];
 
   constructor(private orderBookService: OrderBookCoinbaseService) {
     this.getTransfers();

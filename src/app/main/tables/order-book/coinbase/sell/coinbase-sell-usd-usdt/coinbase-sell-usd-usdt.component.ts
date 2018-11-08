@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { OrderBookBitstamp } from 'src/app/core/order-book-bitstamp/order-book-bitstamp.model';
+import { OrderBookCoinbase } from 'src/app/core/order-book-coinbase/order-book-coinbase.model';
 import { OrderBookCoinbaseService } from 'src/app/core/order-book-coinbase/order-book-coinbase.service';
 import { Sort } from '@angular/material';
+
 
 @Component({
   selector: 'app-coinbase-sell-usd-usdt',
@@ -10,7 +11,7 @@ import { Sort } from '@angular/material';
 })
 export class CoinbaseSellUsdUsdtComponent implements OnInit {
   dataSource;
-  sortedData: OrderBookBitstamp['asks'];
+  sortedData: OrderBookCoinbase['asks'];
 
   constructor(private orderBookService: OrderBookCoinbaseService) {
     this.getTransfers();
