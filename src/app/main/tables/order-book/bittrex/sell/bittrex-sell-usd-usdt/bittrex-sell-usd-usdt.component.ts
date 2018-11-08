@@ -9,7 +9,7 @@ import { OrderBookBittrexService } from 'src/app/core/order-book-bittrex/order-b
   styleUrls: ['./bittrex-sell-usd-usdt.component.css']
 })
 export class BittrexSellUsdUsdtComponent implements OnInit, AfterViewInit {
-  displayedColumns: string[] = ['Quantity', 'Rate'];
+  displayedColumns: string[] = ['Rate', 'Quantity'];
   dataSource;
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;

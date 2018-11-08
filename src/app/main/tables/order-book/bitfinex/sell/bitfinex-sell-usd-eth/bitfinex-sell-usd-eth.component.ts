@@ -8,7 +8,7 @@ import { OrderBookBitfinexService } from 'src/app/core/order-book-bitfinex/order
   styleUrls: ['./bitfinex-sell-usd-eth.component.css']
 })
 export class BitfinexSellUsdEthComponent implements OnInit, AfterViewInit {
-  displayedColumns: string[] = ['amount', 'price'];
+  displayedColumns: string[] = ['price', 'amount'];
   dataSource;
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
