@@ -1,8 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
-html, body{
+html, body {
   font-family: 'Roboto', sans-serif;
+}
+.container {
+  width: 1310px;
+  margin: 0 auto;
+  display: flex;
+}
+.container > * {
+  margin-left: 10px;
+}
+.container > *:first-child {
+  margin-left: 0 !important;
 }
 /* Custom styles of Angular Material table */
 tr.mat-header-row {
@@ -63,8 +74,8 @@ td.mat-cell:last-of-type {
   display: none !important;
 }
 /* Custom table styles */
-.custom-table {
-
+.table-custom {
+  border-spacing: 0;
 }
 .table-header {
   display: flex;
