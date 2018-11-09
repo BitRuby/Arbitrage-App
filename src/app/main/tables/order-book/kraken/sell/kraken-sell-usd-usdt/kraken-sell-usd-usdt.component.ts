@@ -14,6 +14,7 @@ export class KrakenSellUsdUsdtComponent implements OnInit {
   sortedData: AsksAndBids['asks'];
 
   constructor(private orderBookService: OrderBookKrakenService) {
+    this.sortedData = [];
     this.getTransfers();
   }
   ngOnInit(): void {

@@ -13,6 +13,7 @@ export class CoinbaseSellUsdBtcComponent implements OnInit {
   sortedData: OrderBookCoinbase['asks'];
 
   constructor(private orderBookService: OrderBookCoinbaseService) {
+    this.sortedData = [];
     this.getTransfers();
   }
   ngOnInit(): void {

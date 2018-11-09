@@ -13,6 +13,7 @@ export class KrakenSellUsdAdaComponent implements OnInit, AfterViewInit {
   sortedData: AsksAndBids['asks'];
 
   constructor(private orderBookService: OrderBookKrakenService) {
+    this.sortedData = [];
     this.getTransfers();
   }
   ngOnInit(): void {
