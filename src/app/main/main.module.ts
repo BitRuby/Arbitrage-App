@@ -35,6 +35,8 @@ import { CoinbaseSellUsdZecComponent } from './tables/order-book/coinbase/sell/c
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { TableNumRowsComponent } from './table-num-rows/table-num-rows.component';
+import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
+
 
 
 
@@ -81,7 +83,8 @@ import { TableNumRowsComponent } from './table-num-rows/table-num-rows.component
     MatSortModule,
     MatPaginatorModule,
     MatGridListModule,
-    MainRoutingModule
+    MainRoutingModule,
+    ScrollToModule.forRoot()
   ],
   providers: [
     OrderBookBittrexService
