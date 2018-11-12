@@ -26,9 +26,9 @@ html, body {
   flex-direction: row;
 }
 .container > .exchanges > * {
-  margin-left: 10px;
+  margin: 0 5px 0 15px;
   padding: 10px 0;
-  width: 320px;
+  width: 310px;
 }
 .container > .exchanges > *:first-child {
   margin-left: 5px;
