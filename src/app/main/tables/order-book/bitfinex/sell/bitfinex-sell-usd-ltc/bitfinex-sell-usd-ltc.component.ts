@@ -25,7 +25,7 @@ export class BitfinexSellUsdLtcComponent implements OnInit, AfterViewInit {
   }
 
   private getTransfers(): void {
-    const currency1 = 'BTC';
+    const currency1 = 'LTC';
     const currency2 = 'USD';
     this.orderBookService.getOrderBookBitfinex(currency1, currency2)
       .subscribe(orders => {
