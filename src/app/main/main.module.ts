@@ -34,6 +34,7 @@ import { CoinbaseSellUsdXrpComponent } from './tables/order-book/coinbase/sell/c
 import { CoinbaseSellUsdZecComponent } from './tables/order-book/coinbase/sell/coinbase-sell-usd-zec/coinbase-sell-usd-zec.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { TableNumRowsComponent } from './table-num-rows/table-num-rows.component';
 
 
 
@@ -70,7 +71,8 @@ import { FooterComponent } from './footer/footer.component';
     CoinbaseSellUsdXrpComponent,
     CoinbaseSellUsdZecComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    TableNumRowsComponent
   ],
   imports: [
     CommonModule,
