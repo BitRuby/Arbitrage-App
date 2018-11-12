@@ -6,8 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./bitfinex-sell-usd-usdt.component.css']
 })
 export class BitfinexSellUsdUsdtComponent implements OnInit {
-
-  constructor() { }
+  sortedData;
+  constructor() {
+    this.sortedData = [];
+   }
 
   ngOnInit() {
   }
