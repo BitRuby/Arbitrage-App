@@ -33,6 +33,7 @@ import { CoinbaseSellUsdUsdtComponent } from './tables/order-book/coinbase/sell/
 import { CoinbaseSellUsdXrpComponent } from './tables/order-book/coinbase/sell/coinbase-sell-usd-xrp/coinbase-sell-usd-xrp.component';
 import { CoinbaseSellUsdZecComponent } from './tables/order-book/coinbase/sell/coinbase-sell-usd-zec/coinbase-sell-usd-zec.component';
 import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -68,7 +69,8 @@ import { HeaderComponent } from './header/header.component';
     CoinbaseSellUsdUsdtComponent,
     CoinbaseSellUsdXrpComponent,
     CoinbaseSellUsdZecComponent,
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,

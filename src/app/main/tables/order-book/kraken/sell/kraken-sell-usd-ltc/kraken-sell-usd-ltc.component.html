@@ -6,7 +6,7 @@
       </tr>
     
       <tr *ngFor="let element of sortedData | slice:0:5; let i=index" class="table-row">
-        <td>{{element[0]}}</td>
+        <td>{{element[0] | currency:'USD'}}</td>
         <td>{{element[1]}}</td>
       </tr>
     </table>

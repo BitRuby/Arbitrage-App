@@ -1,0 +1,26 @@
+header {
+    height: 70px;
+    width: 100%;
+    background: #FBD026;
+}
+div.hcontainer {
+    width: 1310px;
+    margin: 0px auto;
+    position: relative;
+}
+div.logo {
+    position: absolute;
+    left: 50%;
+    top: 25px;
+    transform: translate(-50%, 0);
+    -webkit-transform: translate(-50%, 0);
+    -moz-transform: translate(-50%, 0);
+    background: url('../../../assets/logo.png');
+    height: 18px;
+    width: 86px;
+}
+div.menu {
+    position: absolute;
+    left: 0;
+    top: 20px;
+}

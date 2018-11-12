@@ -3,18 +3,41 @@
 
 html, body {
   font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 .container {
   width: 1310px;
-  margin: 0 auto;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+}
+.container > .header {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5px;
+}
+.container > .exchanges {
+  display: flex;
+  flex-direction: row;
+}
+.container > .exchanges > * {
+  margin-left: 10px;
+  padding: 10px 0;
+  width: 320px;
+}
+.container > .exchanges > *:first-child {
+  margin-left: 5px;
+}
+.container > .data {
   display: flex;
 }
-.container > * {
+.container > .data > * {
   margin-left: 10px;
   display: flex;
   flex-direction: column;
 }
-.container > *:first-child {
+.container > .data > *:first-child {
   margin-left: 0 !important;
 }
 .table-no-data {
