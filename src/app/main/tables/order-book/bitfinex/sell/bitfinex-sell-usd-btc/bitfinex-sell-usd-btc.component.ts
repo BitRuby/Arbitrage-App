@@ -1,7 +1,10 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { OrderBookBitfinexService } from 'src/app/core/order-book-bitfinex/order-book-bitfinex.service';
 import { Asks } from 'src/app/core/order-book-bitfinex/asks.model';
+import { OrderBookBitfinexService } from 'src/app/core/order-book-bitfinex/order-book-bitfinex.service';
+import { OrderStackService } from 'src/app/core/order-stack/order-stack.service';
 import { Sort } from '@angular/material';
+import { Stack } from 'src/app/core/order-stack/stack.model';
+
 
 @Component({
   selector: 'app-bitfinex-sell-usd-btc',
@@ -11,17 +14,27 @@ import { Sort } from '@angular/material';
 export class BitfinexSellUsdBtcComponent implements OnInit, AfterViewInit {
   dataSource;
   sortedData: Asks;
-
-  constructor(private orderBookService: OrderBookBitfinexService) {
+  order: Stack = {};
+  selected: Asks;
+  constructor(private orderBookService: OrderBookBitfinexService, private orderStackService: OrderStackService) {
     this.sortedData = {};
-    this.getTransfers();
   }
 
 
   ngOnInit() {
+    this.getTransfers();
   }
 
   ngAfterViewInit() {
+  }
+
+  private push(element: Asks) {
+    this.selected = element;
+    this.order.marketId = 1;
+    this.order.exchangeId = 1;
+    this.order.price = element.price;
+    this.order.quantity = element.amount;
+    this.orderStackService.pushOrder(this.order);
   }
 
   private getTransfers(): void {

@@ -5,7 +5,8 @@
         <th mat-sort-header="amount">Quantity</th>
     </tr>
   
-    <tr *ngFor="let element of sortedData | slice:0:5; let i=index" class="table-row">
+    <tr *ngFor="let element of sortedData | slice:0:5; let i=index" class="table-row" [class.selected]="element == selected"
+    (click)="push(element)">
       <td>{{element.price | currency:'USD'}}</td>
       <td>{{element.amount}}</td>
     </tr>

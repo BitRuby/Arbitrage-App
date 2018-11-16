@@ -1,5 +1,5 @@
 export interface Asks {
-    price?: Number;
-    amount?: Number;
+    price?: number;
+    amount?: number;
     timestamp?: Date;
 }

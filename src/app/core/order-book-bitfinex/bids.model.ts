@@ -1,5 +1,5 @@
 export interface Bids {
-    price?: Number;
-    amount?: Number;
+    price?: number;
+    amount?: number;
     timestamp?: Date;
 }

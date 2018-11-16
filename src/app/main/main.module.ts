@@ -36,6 +36,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { TableNumRowsComponent } from './table-num-rows/table-num-rows.component';
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
+import { BitfinexSellComponent } from './tables/order-book/bitfinex/sell/bitfinex-sell/bitfinex-sell.component';
 
 
 
@@ -74,7 +75,8 @@ import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
     CoinbaseSellUsdZecComponent,
     HeaderComponent,
     FooterComponent,
-    TableNumRowsComponent
+    TableNumRowsComponent,
+    BitfinexSellComponent
   ],
   imports: [
     CommonModule,
