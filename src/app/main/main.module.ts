@@ -13,7 +13,6 @@ import { OrderBookUsdEthComponent } from './tables/order-book/asks/order-book-us
 import { OrderBookUsdAdaComponent } from './tables/order-book/asks/order-book-usd-ada/order-book-usd-ada.component';
 import { OrderBookUsdUsdtComponent } from './tables/order-book/asks/order-book-usd-usdt/order-book-usd-usdt.component';
 import { OrderBookUsdXrpComponent } from './tables/order-book/asks/order-book-usd-xrp/order-book-usd-xrp.component';
-import { OrderBookUsdMonComponent } from './tables/order-book/asks/order-book-usd-mon/order-book-usd-mon.component';
 import { OrderBookUsdZecComponent } from './tables/order-book/asks/order-book-usd-zec/order-book-usd-zec.component';
 
 @NgModule({
@@ -28,7 +27,6 @@ import { OrderBookUsdZecComponent } from './tables/order-book/asks/order-book-us
     OrderBookUsdAdaComponent,
     OrderBookUsdUsdtComponent,
     OrderBookUsdXrpComponent,
-    OrderBookUsdMonComponent,
     OrderBookUsdZecComponent
   ],
   imports: [
