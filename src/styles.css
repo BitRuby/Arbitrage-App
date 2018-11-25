@@ -37,9 +37,7 @@ html, body {
   display: flex;
 }
 .container > .data > * {
-  margin-left: 10px;
   display: flex;
-  flex-direction: column;
 }
 .container > .data > *:first-child {
   margin-left: 0 !important;
