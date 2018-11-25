@@ -1,7 +1,9 @@
 import { Component, OnInit, AfterViewInit, ViewChildren, QueryList } from '@angular/core';
 import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
-import { OrderBookService } from 'src/app/core/order-book/order-book.service';
 import { OrderData } from 'src/app/core/order-book/order-data.model';
+import { OrderBookService } from 'src/app/core/order-book/order-book.service';
+import { OrderStackService } from 'src/app/core/order-stack/order-stack.service';
+import { Stack } from 'src/app/core/order-stack/stack.model';
 
 @Component({
   selector: 'app-order-book-usd-ada',
@@ -12,11 +14,22 @@ export class OrderBookUsdAdaComponent implements OnInit, AfterViewInit {
 
   displayedColumns: string[] = ['Price', 'Quantity'];
   dataSource = new Array<MatTableDataSource<OrderData>>();
+  selected = new Array<OrderData>();
 
   @ViewChildren(MatPaginator) paginator = new QueryList<MatPaginator>();
   @ViewChildren(MatSort) sort = new QueryList<MatSort>();
 
-  constructor(private ob: OrderBookService) {
+  constructor(private ob: OrderBookService, private os: OrderStackService) {
+  }
+
+  private push(element: OrderData, marketId: number) {
+    const order: Stack = {};
+    this.selected[marketId] = element;
+    order.marketId = marketId;
+    order.exchangeId = 17;
+    order.price = element.Price;
+    order.quantity = element.Quantity;
+    this.os.pushOrder(order);
   }
 
   ngOnInit() {

@@ -1,7 +1,10 @@
 import { Component, OnInit, AfterViewInit, ViewChildren, QueryList } from '@angular/core';
 import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 import { OrderData } from 'src/app/core/order-book/order-data.model';
+import { Stack } from 'src/app/core/order-stack/stack.model';
 import { OrderBookService } from 'src/app/core/order-book/order-book.service';
+import { OrderStackService } from 'src/app/core/order-stack/order-stack.service';
+
 
 @Component({
   selector: 'app-order-book-usd-btc',
@@ -12,11 +15,11 @@ export class OrderBookUsdBtcComponent implements OnInit, AfterViewInit {
 
   displayedColumns: string[] = ['Price', 'Quantity'];
   dataSource = new Array<MatTableDataSource<OrderData>>();
-
+  selected = new Array<OrderData>();
   @ViewChildren(MatPaginator) paginator = new QueryList<MatPaginator>();
   @ViewChildren(MatSort) sort = new QueryList<MatSort>();
 
-  constructor(private ob: OrderBookService) {
+  constructor(private ob: OrderBookService, private os: OrderStackService) {
   }
 
   ngOnInit() {
@@ -24,6 +27,17 @@ export class OrderBookUsdBtcComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     this.loadData();
   }
+
+  private push(element: OrderData, marketId: number) {
+    const order: Stack = {};
+    this.selected[marketId] = element;
+    order.marketId = marketId;
+    order.exchangeId = 1;
+    order.price = element.Price;
+    order.quantity = element.Quantity;
+    this.os.pushOrder(order);
+  }
+
   loadData(): void {
     const currency1 = 'BTC';
     const currency2 = 'USD';

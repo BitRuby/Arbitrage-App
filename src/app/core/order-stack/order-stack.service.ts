@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Stack } from './stack.model';
-import { MatProgressBarBase } from '@angular/material';
 
 @Injectable({
   providedIn: 'root'
