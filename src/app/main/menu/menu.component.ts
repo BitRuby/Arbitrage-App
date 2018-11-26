@@ -8,10 +8,8 @@ import { MenuService } from './menu.service';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
-
   @HostBinding('class.slideDown')
   isOpen = false;
-
   constructor(private menuService: MenuService) { }
 
   ngOnInit() {

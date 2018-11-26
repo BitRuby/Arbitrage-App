@@ -174,3 +174,32 @@ th:last-of-type {
 .mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar {
   background: #FBD026 !important;
 }
+.mat-tab-body-wrapper {
+  padding: 25px 0;
+}
+/*Custom styles Material expansion panel*/
+.mat-expansion-panel-header-title {
+  color: #FBD026;
+}
+.mat-expansion-panel{
+  background: none;
+}
+.mat-expansion-indicator::after {
+  color: #FBD026;
+}
+/*Slider button Angular material */
+.mat-slide-toggle-content {
+  color: #DDD;
+}
+.mat-slide-toggle-bar {
+  background: #DDD;
+}
+.mat-slide-toggle-thumb {
+  background: #FFF;
+}
+.mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+  background: #FBD026;
+}
+.mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+  background: rgba(251, 208, 38, .5);
+}

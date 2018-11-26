@@ -1,0 +1,9 @@
+.buttons > * {
+    float: right;
+    padding: 10px;
+}
+.buttons::after {
+    display: block;
+    content: '';
+    clear: both;
+}

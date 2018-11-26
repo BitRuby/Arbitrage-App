@@ -27,6 +27,14 @@
     color: #FBD026;
 }
 
+:host ::ng-deep app-header .material-icons::after {
+    margin-left: -25px;
+    content: 'clear';
+    visibility: initial;
+}
+:host ::ng-deep app-header .material-icons {
+    visibility: hidden;
+}
 ::-webkit-scrollbar { 
     display: none; 
 }
