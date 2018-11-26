@@ -166,3 +166,11 @@ th:last-of-type {
   -webkit-transition: background-color 0.4s ease-in;
   transition: background-color 0.4s ease-in;
 }
+/*Custom styles Material Tabs*/
+.mat-tab-label .mat-tab-label-content {
+  color: #FFF !important;
+  text-transform: uppercase;
+}
+.mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+  background: #FBD026 !important;
+}

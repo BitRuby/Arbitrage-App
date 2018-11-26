@@ -12,7 +12,7 @@ import { OrderBookUsdUsdtComponent } from './tables/order-book/asks/order-book-u
 import { OrderBookUsdXrpComponent } from './tables/order-book/asks/order-book-usd-xrp/order-book-usd-xrp.component';
 import { OrderBookUsdZecComponent } from './tables/order-book/asks/order-book-usd-zec/order-book-usd-zec.component';
 import { CommonModule } from '@angular/common';
-import { MatListModule, MatTableModule, MatGridListModule, MatSortModule, MatPaginatorModule } from '@angular/material';
+import { MatListModule, MatTableModule, MatGridListModule, MatSortModule, MatPaginatorModule, MatTabsModule } from '@angular/material';
 import { MainRoutingModule } from './main-routing.module';
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 
@@ -36,6 +36,7 @@ import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
     CommonModule,
     MatListModule,
     MatTableModule,
+    MatTabsModule,
     MatSortModule,
     MatPaginatorModule,
     MatGridListModule,

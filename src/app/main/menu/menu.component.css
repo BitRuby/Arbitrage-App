@@ -12,12 +12,22 @@
    top: 0 !important;
 }
 :host .overlay-content {
-    width: 1310px;
     overflow: auto;
     height: 100%;
-    margin: 0 auto;
     box-sizing: content-box;
 }
+:host ::ng-deep app-header header {
+    background: none !important;
+    border-bottom: 1px solid rgb(21,21,21);
+}
+:host ::ng-deep app-header div.logo {
+    background: url('../../../assets/logo2.png');
+}
+:host ::ng-deep app-header div.menu {
+    color: #FBD026;
+}
+
 ::-webkit-scrollbar { 
     display: none; 
 }
+
