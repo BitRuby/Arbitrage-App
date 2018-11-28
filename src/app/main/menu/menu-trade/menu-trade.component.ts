@@ -15,7 +15,7 @@ import { Stack } from 'src/app/core/order-stack/stack.model';
 })
 export class MenuTradeComponent implements OnInit {
   panelOpenState: Boolean = false;
-  _allExpandState = false;
+  allExpandState = true;
   constructor(private os: OrderStackService, private es: ExchangeService) { }
 
   ngOnInit() {
