@@ -11,7 +11,7 @@
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;" [class.selected]="row == selected[1]"
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;" [class.selected]="row == selected.get(9*1)"
   (click)="push(row, 1)"></tr>
 </table>  <mat-paginator style="display:none" [pageSizeOptions]="[5]" showFirstLastButtons></mat-paginator>
 
@@ -27,7 +27,7 @@
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;" [class.selected]="row == selected[2]"
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;" [class.selected]="row == selected.get(9*2)"
   (click)="push(row, 2)"></tr>
 </table>  <mat-paginator style="display:none" [pageSizeOptions]="[5]" showFirstLastButtons></mat-paginator>
 
@@ -43,7 +43,7 @@
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;" [class.selected]="row == selected[3]"
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;" [class.selected]="row == selected.get(9*3)"
   (click)="push(row, 3)"></tr>
 </table>  <mat-paginator style="display:none" [pageSizeOptions]="[5]" showFirstLastButtons></mat-paginator>
 
@@ -59,6 +59,6 @@
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;" [class.selected]="row == selected[4]"
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;" [class.selected]="row == selected.get(9*4)"
   (click)="push(row, 4)"></tr>
 </table>  <mat-paginator style="display:none" [pageSizeOptions]="[5]" showFirstLastButtons></mat-paginator>

@@ -7,3 +7,24 @@
     content: '';
     clear: both;
 }
+.list-container {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+}
+.list-container .item, .item-title {
+    flex: grow;
+    width: 200px;
+    text-align: center;
+    line-height: 32px;
+}
+.list-container .item:first-child, .item-title:first-child {
+    text-align: left;
+}
+
+.item-title {
+    color: #AAA !important;
+}
+.item i {
+    cursor: pointer;
+}

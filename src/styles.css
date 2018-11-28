@@ -203,3 +203,15 @@ th:last-of-type {
 .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
   background: rgba(251, 208, 38, .5);
 }
+/*Angular material custom list */
+.mat-list .mat-list-item {
+  color: #DDD;
+}
+.mat-divider {
+  border-top-color: rgba(251, 208, 38, .2);
+}
+.mat-list .mat-list-item .mat-list-item-content {
+  padding: 0 !important;
+  text-transform: uppercase;
+  font-size: .9em;
+}

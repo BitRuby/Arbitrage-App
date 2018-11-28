@@ -3,52 +3,172 @@
   <mat-slide-toggle>FINDER</mat-slide-toggle>
 </div>
 <mat-accordion>
-  <mat-expansion-panel [expanded]="true">
+  <mat-expansion-panel [expanded]="allExpandState">
     <mat-expansion-panel-header>
       <mat-panel-title>
-        USD/BTC (0 selected)
+        USD/BTC ({{getOrders(1).length}} selected)
       </mat-panel-title>
     </mat-expansion-panel-header>
-    Sample text
+    <mat-list *ngIf="getOrders(1).length > 0">
+    <mat-list-item>
+        <div class="list-container">
+          <div class="item-title">Exchange</div>
+          <div class="item-title">Price</div>
+          <div class="item-title">Quantity</div>
+          <div class="item-title">Service Fee</div>
+          <div class="item-title">Actions</div>
+        </div>
+      </mat-list-item>
+      <mat-list-item *ngFor="let item of getOrders(1)">
+        <div class="list-container">
+          <div class="item">{{item.exchangeName}}</div>
+          <div class="item">{{item.price | currency:'USD'}}</div>
+          <div class="item">{{item.quantity}}</div>
+          <div class="item">{{item.exchangeFees}}</div>
+          <div class="item"><i class="material-icons" (click)="deleteOrder(item.exchangeId*item.marketId)">remove_circle_outline</i></div>
+        </div>
+        <mat-divider></mat-divider>
+      </mat-list-item>
+    </mat-list>
   </mat-expansion-panel>
-  <mat-expansion-panel>
+  <mat-expansion-panel [expanded]="allExpandState" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
     <mat-expansion-panel-header>
       <mat-panel-title>
-        USD/ETH (0 selected)
+        USD/ETH ({{getOrders(5).length}} selected)
       </mat-panel-title>
     </mat-expansion-panel-header>
-    Sample text
+    <mat-list *ngIf="getOrders(5).length > 0">
+      <mat-list-item>
+          <div class="list-container">
+            <div class="item-title">Exchange</div>
+            <div class="item-title">Price</div>
+            <div class="item-title">Quantity</div>
+            <div class="item-title">Service Fee</div>
+            <div class="item-title">Actions</div>
+          </div>
+        </mat-list-item>
+        <mat-list-item *ngFor="let item of getOrders(5)">
+          <div class="list-container">
+            <div class="item">{{item.exchangeName}}</div>
+            <div class="item">{{item.price | currency:'USD'}}</div>
+            <div class="item">{{item.quantity}}</div>
+            <div class="item">{{item.exchangeFees}}</div>
+            <div class="item"><i class="material-icons" (click)="deleteOrder(item.exchangeId*item.marketId)">remove_circle_outline</i></div>
+          </div>
+          <mat-divider></mat-divider>
+        </mat-list-item>
+      </mat-list>
   </mat-expansion-panel>
-  <mat-expansion-panel>
+  <mat-expansion-panel [expanded]="allExpandState" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
     <mat-expansion-panel-header>
       <mat-panel-title>
-        USD/LTC (0 selected)
+        USD/LTC ({{getOrders(9).length}} selected)
       </mat-panel-title>
     </mat-expansion-panel-header>
-    Sample text
+    <mat-list *ngIf="getOrders(9).length > 0">
+      <mat-list-item>
+          <div class="list-container">
+            <div class="item-title">Exchange</div>
+            <div class="item-title">Price</div>
+            <div class="item-title">Quantity</div>
+            <div class="item-title">Service Fee</div>
+            <div class="item-title">Actions</div>
+          </div>
+        </mat-list-item>
+        <mat-list-item *ngFor="let item of getOrders(9)">
+          <div class="list-container">
+            <div class="item">{{item.exchangeName}}</div>
+            <div class="item">{{item.price | currency:'USD'}}</div>
+            <div class="item">{{item.quantity}}</div>
+            <div class="item">{{item.exchangeFees}}</div>
+            <div class="item"><i class="material-icons" (click)="deleteOrder(item.exchangeId*item.marketId)">remove_circle_outline</i></div>
+          </div>
+          <mat-divider></mat-divider>
+        </mat-list-item>
+      </mat-list>
   </mat-expansion-panel>
-  <mat-expansion-panel>
+  <mat-expansion-panel [expanded]="allExpandState" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
     <mat-expansion-panel-header>
       <mat-panel-title>
-        USD/ETH (0 selected)
+        USD/XRP ({{getOrders(13).length}} selected)
       </mat-panel-title>
     </mat-expansion-panel-header>
-    Sample text
+    <mat-list *ngIf="getOrders(13).length > 0">
+      <mat-list-item>
+          <div class="list-container">
+            <div class="item-title">Exchange</div>
+            <div class="item-title">Price</div>
+            <div class="item-title">Quantity</div>
+            <div class="item-title">Service Fee</div>
+            <div class="item-title">Actions</div>
+          </div>
+        </mat-list-item>
+        <mat-list-item *ngFor="let item of getOrders(13)">
+          <div class="list-container">
+            <div class="item">{{item.exchangeName}}</div>
+            <div class="item">{{item.price | currency:'USD'}}</div>
+            <div class="item">{{item.quantity}}</div>
+            <div class="item">{{item.exchangeFees}}</div>
+            <div class="item"><i class="material-icons" (click)="deleteOrder(item.exchangeId*item.marketId)">remove_circle_outline</i></div>
+          </div>
+          <mat-divider></mat-divider>
+        </mat-list-item>
+      </mat-list>
   </mat-expansion-panel>
-  <mat-expansion-panel>
+  <mat-expansion-panel [expanded]="allExpandState" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
     <mat-expansion-panel-header>
       <mat-panel-title>
-        USD/ADA (0 selected)
+        USD/ADA ({{getOrders(17).length}} selected)
       </mat-panel-title>
     </mat-expansion-panel-header>
-    Sample text
+    <mat-list *ngIf="getOrders(17).length > 0">
+      <mat-list-item>
+          <div class="list-container">
+            <div class="item-title">Exchange</div>
+            <div class="item-title">Price</div>
+            <div class="item-title">Quantity</div>
+            <div class="item-title">Service Fee</div>
+            <div class="item-title">Actions</div>
+          </div>
+        </mat-list-item>
+        <mat-list-item *ngFor="let item of getOrders(17)">
+          <div class="list-container">
+            <div class="item">{{item.exchangeName}}</div>
+            <div class="item">{{item.price | currency:'USD'}}</div>
+            <div class="item">{{item.quantity}}</div>
+            <div class="item">{{item.exchangeFees}}</div>
+            <div class="item"><i class="material-icons" (click)="deleteOrder(item.exchangeId*item.marketId)">remove_circle_outline</i></div>
+          </div>
+          <mat-divider></mat-divider>
+        </mat-list-item>
+      </mat-list>
   </mat-expansion-panel>
-  <mat-expansion-panel>
+  <mat-expansion-panel [expanded]="allExpandState" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
     <mat-expansion-panel-header>
       <mat-panel-title>
-        USD/ZEC (0 selected)
+        USD/ZEC ({{getOrders(21).length}} selected)
       </mat-panel-title>
     </mat-expansion-panel-header>
-    Sample text
+    <mat-list *ngIf="getOrders(21).length > 0">
+      <mat-list-item>
+          <div class="list-container">
+            <div class="item-title">Exchange</div>
+            <div class="item-title">Price</div>
+            <div class="item-title">Quantity</div>
+            <div class="item-title">Service Fee</div>
+            <div class="item-title">Actions</div>
+          </div>
+        </mat-list-item>
+        <mat-list-item *ngFor="let item of getOrders(21)">
+          <div class="list-container">
+            <div class="item">{{item.exchangeName}}</div>
+            <div class="item">{{item.price | currency:'USD'}}</div>
+            <div class="item">{{item.quantity}}</div>
+            <div class="item">{{item.exchangeFees}}</div>
+            <div class="item"><i class="material-icons" (click)="deleteOrder(item.exchangeId*item.marketId)">remove_circle_outline</i></div>
+          </div>
+          <mat-divider></mat-divider>
+        </mat-list-item>
+      </mat-list>
   </mat-expansion-panel>
 </mat-accordion>
