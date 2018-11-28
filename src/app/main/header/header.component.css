@@ -2,6 +2,8 @@ header {
     height: 70px;
     width: 100%;
     background: #FBD026;
+    position: fixed;
+    z-index: 1;
 }
 div.hcontainer {
     width: 1310px;
