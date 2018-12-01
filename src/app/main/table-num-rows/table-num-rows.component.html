@@ -1,3 +1,7 @@
-<div class="row-options">
-  <span class="row-options-num">5</span><i class="large material-icons">keyboard_arrow_down</i>
-</div>
+<mat-form-field>
+  <mat-select placeholder="Orders">
+    <mat-option *ngFor="let pageSize of pageOptions" [value]="pageSize.value" (click)="changeSize(pageSize.value)">
+      {{pageSize.viewValue}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>

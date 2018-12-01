@@ -215,3 +215,10 @@ th:last-of-type {
   text-transform: uppercase;
   font-size: .9em;
 }
+/*Angular select*/
+.mat-form-field.mat-focused .mat-form-field-label {
+  color: #FBD026;
+}
+.mat-form-field.mat-focused .mat-form-field-ripple {
+  background: #FBD026;
+}

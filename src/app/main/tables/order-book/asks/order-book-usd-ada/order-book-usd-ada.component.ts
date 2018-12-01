@@ -5,6 +5,7 @@ import { OrderBookService } from 'src/app/core/order-book/order-book.service';
 import { OrderStackService } from 'src/app/core/order-stack/order-stack.service';
 import { Stack } from 'src/app/core/order-stack/stack.model';
 import { ExchangeService } from 'src/app/core/exchange/exchange.service';
+import { TableNumRowsService } from 'src/app/main/table-num-rows/table-num-rows.service';
 
 @Component({
   selector: 'app-order-book-usd-ada',
@@ -19,12 +20,19 @@ export class OrderBookUsdAdaComponent implements OnInit, AfterViewInit {
   @ViewChildren(MatPaginator) paginator = new QueryList<MatPaginator>();
   @ViewChildren(MatSort) sort = new QueryList<MatSort>();
 
-  constructor(private ob: OrderBookService, private os: OrderStackService, private ex: ExchangeService) {
+  constructor(private ob: OrderBookService, private os: OrderStackService, private ex: ExchangeService, private tnr: TableNumRowsService) {
     this.associateSelectedOrders();
   }
 
   private associateSelectedOrders() {
     this.selected = this.os.selectedOrders;
+  }
+
+  private changePageSize(): void {
+    this.tnr.update.subscribe(val => {
+      this.dataSource[0].paginator._changePageSize(val);
+      this.dataSource[1].paginator._changePageSize(val);
+    });
   }
 
   private push(element: OrderData, marketId: number) {
@@ -47,6 +55,7 @@ export class OrderBookUsdAdaComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
+    this.changePageSize();
   }
   ngAfterViewInit(): void {
     this.loadData();

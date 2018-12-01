@@ -1,14 +1,7 @@
-.row-options {
-    width: 100px;
-    border-bottom: 2px solid #474747;
-    padding-bottom: 5px;
+mat-form-field {
     position: absolute;
     right: 0;
 }
-.row-options-num {
-    margin-right: 65px;
-    font-size: 14px;
-}
-i {
-    position: absolute;
+:host {
+    height: 40px;
 }

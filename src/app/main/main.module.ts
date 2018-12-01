@@ -16,6 +16,7 @@ import { MatListModule, MatTableModule, MatGridListModule, MatSortModule, MatPag
 MatExpansionModule,
 MatButtonModule,
 MatSlideToggleModule,
+MatSelectModule
 } from '@angular/material';
 import { MainRoutingModule } from './main-routing.module';
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
@@ -47,6 +48,7 @@ import { MenuTradeComponent } from './menu/menu-trade/menu-trade.component';
     MatPaginatorModule,
     MatGridListModule,
     MatExpansionModule,
+    MatSelectModule,
     MatButtonModule,
     MatSlideToggleModule,
     MainRoutingModule,
