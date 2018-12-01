@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TableNumRowsService } from './table-num-rows.service';
-export interface PageOptions {
-  value: number;
-  viewValue: string;
-}
+import { PageOptions } from './page-options.model';
+
 @Component({
   selector: 'app-table-num-rows',
   templateUrl: './table-num-rows.component.html',
