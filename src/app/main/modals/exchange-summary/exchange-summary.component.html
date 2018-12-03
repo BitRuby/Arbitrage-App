@@ -1,0 +1,43 @@
+<h6 class="title" mat-dialog-title>{{data.exchangeName}} {{data.exchangeCurrency1}}/{{data.exchangeCurrency2}} Stats 
+</h6>
+<span *ngIf="(data.percentageChange > 0); else elseBlock" class="text-green">{{data.percentageChange | percent:'.2-2'}}<i class="material-icons">
+    arrow_drop_up
+    </i></span>
+<ng-template #elseBlock><span class="text-red">{{data.percentageChange | percent:'.2-2'}}<i class="material-icons">
+    arrow_drop_down
+    </i></span></ng-template>
+<div mat-dialog-content>
+  <div class="dialog-row">
+    <div class="dialog-row-content">
+      <strong class="content-name">Last:</strong>
+      <div class="content-value">{{data.lastPrice | currency:'USD' :'symbol':'.3-3'}}</div>
+    </div>
+    <div class="dialog-row-content">
+      <strong class="content-name">Volume:</strong>
+      <div class="content-value">{{data.volume | currency:'USD' }}</div>
+    </div>
+  </div>
+  <div class="dialog-row">
+    <div class="dialog-row-content">
+      <strong class="content-name">Bid:</strong>
+      <div class="content-value">{{data.bid | currency:'USD':'symbol':'.3-3'}}</div>
+    </div>
+    <div class="dialog-row-content">
+      <strong class="content-name">24H Low:</strong>
+      <div class="content-value">{{data.lowPrice | currency:'USD':'symbol':'.3-3'}}</div>
+    </div>
+  </div>
+  <div class="dialog-row">
+    <div class="dialog-row-content">
+      <strong class="content-name">Ask:</strong>
+      <div class="content-value">{{data.ask | currency:'USD':'symbol':'.3-3'}}</div>
+    </div>
+    <div class="dialog-row-content">
+      <strong class="content-name">24H High:</strong>
+      <div class="content-value">{{data.highPrice | currency:'USD':'symbol':'.3-3'}}</div>
+    </div>
+  </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Close</button>
+</div>

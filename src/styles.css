@@ -8,7 +8,7 @@ html, body {
   padding: 0;
 }
 .space {
-  height: 100px;
+  height: 80px;
 }
 .container {
   width: 1310px;
@@ -46,6 +46,9 @@ html, body {
 .table-no-data {
   text-align: center;
   width: 320px;
+}
+.modal-title {
+  cursor: pointer;
 }
 /* Custom styles of Angular Material table */
 tr.mat-header-row {
@@ -215,10 +218,19 @@ th:last-of-type {
   text-transform: uppercase;
   font-size: .9em;
 }
-/*Angular select*/
+/*Angular material select*/
 .mat-form-field.mat-focused .mat-form-field-label {
   color: #FBD026;
 }
 .mat-form-field.mat-focused .mat-form-field-ripple {
   background: #FBD026;
+}
+/*Angulr material modal*/
+.mat-dialog-container {
+  background: #262728;
+  color: #FFF;
+  border-bottom: 5px solid #FBD026;
+}
+.mat-dialog-actions .mat-button {
+  background: grey;
 }

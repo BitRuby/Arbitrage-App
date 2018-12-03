@@ -16,11 +16,16 @@ import { MatListModule, MatTableModule, MatGridListModule, MatSortModule, MatPag
 MatExpansionModule,
 MatButtonModule,
 MatSlideToggleModule,
-MatSelectModule
+MatSelectModule,
+MatDialogModule
 } from '@angular/material';
 import { MainRoutingModule } from './main-routing.module';
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 import { MenuTradeComponent } from './menu/menu-trade/menu-trade.component';
+import { ExchangeSummaryComponent } from './modals/exchange-summary/exchange-summary.component';
+import { ModalService } from '../core/modal/modal.service';
+
+
 
 
 @NgModule({
@@ -37,7 +42,8 @@ import { MenuTradeComponent } from './menu/menu-trade/menu-trade.component';
     OrderBookUsdUsdtComponent,
     OrderBookUsdXrpComponent,
     OrderBookUsdZecComponent,
-    MenuTradeComponent
+    MenuTradeComponent,
+    ExchangeSummaryComponent
   ],
   imports: [
     CommonModule,
@@ -49,12 +55,17 @@ import { MenuTradeComponent } from './menu/menu-trade/menu-trade.component';
     MatGridListModule,
     MatExpansionModule,
     MatSelectModule,
+    MatDialogModule,
     MatButtonModule,
     MatSlideToggleModule,
     MainRoutingModule,
     ScrollToModule.forRoot()
   ],
   providers: [
+    ModalService
+  ],
+  entryComponents: [
+    ExchangeSummaryComponent
   ]
 })
 export class MainModule { }

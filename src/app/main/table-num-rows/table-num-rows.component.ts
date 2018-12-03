@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { TableNumRowsService } from './table-num-rows.service';
-import { PageOptions } from './page-options.model';
+import { TableNumRowsService } from '../../core/table-num-rows/table-num-rows.service';
+import { PageOptions } from '../../core/table-num-rows/page-options.model';
 
 @Component({
   selector: 'app-table-num-rows',

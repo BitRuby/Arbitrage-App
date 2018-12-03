@@ -1,0 +1,30 @@
+.dialog-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.dialog-row .dialog-row-content:nth-child(2n) {
+    text-align: right;
+}
+.dialog-row .dialog-row-content .content-name {
+    font-size: 0.7em;
+    color: #BFBFBF;
+    text-transform: uppercase;
+}
+.dialog-row .dialog-row-content .content-value {
+    font-size: 1.2em;
+}
+.title {
+    text-transform: uppercase;
+    font-size: 1.1em;
+}
+.text-green {
+    display: flex;
+    font-size: 0.95em;
+    color: rgb(146, 212, 120);
+}
+.text-red {
+    display: flex;
+    font-size: 0.95em;
+    color: rgb(209, 73, 73);
+}

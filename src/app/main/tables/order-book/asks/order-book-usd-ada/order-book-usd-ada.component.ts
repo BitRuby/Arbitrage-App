@@ -5,7 +5,7 @@ import { OrderBookService } from 'src/app/core/order-book/order-book.service';
 import { OrderStackService } from 'src/app/core/order-stack/order-stack.service';
 import { Stack } from 'src/app/core/order-stack/stack.model';
 import { ExchangeService } from 'src/app/core/exchange/exchange.service';
-import { TableNumRowsService } from 'src/app/main/table-num-rows/table-num-rows.service';
+import { TableNumRowsService } from 'src/app/core/table-num-rows/table-num-rows.service';
 
 @Component({
   selector: 'app-order-book-usd-ada',
