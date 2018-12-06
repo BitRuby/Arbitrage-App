@@ -2,7 +2,7 @@
 <table #Bittrex mat-table [dataSource]="dataSource[0]" matSort class="mat-elevation-z8" matSortDisableClear matSortActive="Price" matSortDirection="asc">
   <ng-container matColumnDef="Price">
     <th mat-header-cell *matHeaderCellDef mat-sort-header> Price </th>
-    <td mat-cell *matCellDef="let element"> {{element.Price | currency:'USD'}} </td>
+    <td mat-cell *matCellDef="let element"> {{element.Price | currency:'USD' :'symbol':'.3-3'}} </td>
   </ng-container>
 
   <ng-container matColumnDef="Quantity">
@@ -18,7 +18,7 @@
 <table #Bitfinex mat-table [dataSource]="dataSource[1]" matSort class="mat-elevation-z8" matSortDisableClear matSortActive="Price" matSortDirection="asc">
   <ng-container matColumnDef="Price">
     <th mat-header-cell *matHeaderCellDef mat-sort-header> Price </th>
-    <td mat-cell *matCellDef="let element"> {{element.Price | currency:'USD'}} </td>
+    <td mat-cell *matCellDef="let element"> {{element.Price | currency:'USD' :'symbol':'.3-3'}} </td>
   </ng-container>
 
   <ng-container matColumnDef="Quantity">
@@ -34,7 +34,7 @@
 <table #Coinbase mat-table [dataSource]="dataSource[2]" matSort class="mat-elevation-z8" matSortDisableClear matSortActive="Price" matSortDirection="asc">
   <ng-container matColumnDef="Price">
     <th mat-header-cell *matHeaderCellDef mat-sort-header> Price </th>
-    <td mat-cell *matCellDef="let element"> {{element.Price | currency:'USD'}} </td>
+    <td mat-cell *matCellDef="let element"> {{element.Price | currency:'USD' :'symbol':'.3-3'}} </td>
   </ng-container>
 
   <ng-container matColumnDef="Quantity">
