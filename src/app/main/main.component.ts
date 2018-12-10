@@ -1,5 +1,5 @@
 import { Component, OnInit} from '@angular/core';
-import { ModalService } from '../core/modal/modal.service';
+import { ExchangeSummaryService } from '../core/modal/exchange-summary.service';
 
 
 
@@ -12,7 +12,7 @@ import { ModalService } from '../core/modal/modal.service';
 export class MainComponent implements OnInit {
 
 
-  constructor(private modalService: ModalService) {
+  constructor(private modalService: ExchangeSummaryService) {
   }
 
   private openModal(exchangeName: string, currency1: string, currency2: string): void {

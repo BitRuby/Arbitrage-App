@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class ModalService {
+export class ExchangeSummaryService {
 
     exchangeSummary: ExchangeSummary;
 
@@ -22,10 +22,10 @@ export class ModalService {
 
     constructor(public dialog: MatDialog, private httpClient: HttpClient) {
       this.exchangeSummary = {} as ExchangeSummary;
-      this.openDialogExchangeSummary();    }
+      this.openDialogExchangeSummary();
+    }
 
     openDialogExchangeSummary(): void {
-
       this.updateExchangeService.subscribe(retValue => {
         const dialogRef = this.dialog.open(ExchangeSummaryComponent, {
           width: '300px',

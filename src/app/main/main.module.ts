@@ -23,7 +23,14 @@ import { MainRoutingModule } from './main-routing.module';
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 import { MenuTradeComponent } from './menu/menu-trade/menu-trade.component';
 import { ExchangeSummaryComponent } from './modals/exchange-summary/exchange-summary.component';
-import { ModalService } from '../core/modal/modal.service';
+import { ExchangeSummaryService } from '../core/modal/exchange-summary.service';
+import { MenuSettingsComponent } from './menu/menu-settings/menu-settings.component';
+import { MenuSettingsAccountsComponent } from './menu/menu-settings/menu-settings-accounts/menu-settings-accounts.component';
+import { MenuSettingsExchangesComponent } from './menu/menu-settings/menu-settings-exchanges/menu-settings-exchanges.component';
+import { MenuSettingsMarketsComponent } from './menu/menu-settings/menu-settings-markets/menu-settings-markets.component';
+import { ExchangeConnectComponent } from './modals/exchange-connect/exchange-connect.component';
+import { ExchangeConnectService } from '../core/modal/exchange-connect.service';
+
 
 
 
@@ -43,7 +50,12 @@ import { ModalService } from '../core/modal/modal.service';
     OrderBookUsdXrpComponent,
     OrderBookUsdZecComponent,
     MenuTradeComponent,
-    ExchangeSummaryComponent
+    ExchangeSummaryComponent,
+    MenuSettingsComponent,
+    MenuSettingsAccountsComponent,
+    MenuSettingsExchangesComponent,
+    MenuSettingsMarketsComponent,
+    ExchangeConnectComponent
   ],
   imports: [
     CommonModule,
@@ -62,10 +74,12 @@ import { ModalService } from '../core/modal/modal.service';
     ScrollToModule.forRoot()
   ],
   providers: [
-    ModalService
+    ExchangeSummaryService,
+    ExchangeConnectService
   ],
   entryComponents: [
-    ExchangeSummaryComponent
+    ExchangeSummaryComponent,
+    ExchangeConnectComponent
   ]
 })
 export class MainModule { }

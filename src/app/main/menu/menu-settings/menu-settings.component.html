@@ -1,0 +1,19 @@
+<div class="container">
+  <mat-tab-group animationDuration="1ms" mat-align-tabs="center">
+      <mat-tab label="Accounts">
+          <ng-template matTabContent>
+            <app-menu-settings-accounts></app-menu-settings-accounts>
+          </ng-template>
+      </mat-tab>
+      <mat-tab label="Exchanges">
+          <ng-template matTabContent>
+              <app-menu-settings-exchanges></app-menu-settings-exchanges>
+          </ng-template>
+      </mat-tab>
+      <mat-tab label="Markets">
+        <ng-template matTabContent>
+            <app-menu-settings-markets></app-menu-settings-markets>
+        </ng-template>
+    </mat-tab>
+  </mat-tab-group>
+</div>

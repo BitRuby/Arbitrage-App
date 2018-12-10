@@ -28,3 +28,6 @@
 .item i {
     cursor: pointer;
 }
+::-webkit-scrollbar { 
+    display: none; 
+}

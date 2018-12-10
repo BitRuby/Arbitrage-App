@@ -1,15 +1,15 @@
 <div class="overlay-content">
     <app-header></app-header>
     <div class="container">
-        <mat-tab-group mat-align-tabs="center">
+        <mat-tab-group mat-align-tabs="center" animationDuration="0ms">
             <mat-tab label="Trade">
                 <ng-template matTabContent>
-                   <app-menu-trade></app-menu-trade>
+                    <app-menu-trade></app-menu-trade>
                 </ng-template>
             </mat-tab>
             <mat-tab label="Settings">
                 <ng-template matTabContent>
-                    <h1 style="color:#FFF">dawda</h1>
+                    <app-menu-settings></app-menu-settings>
                 </ng-template>
             </mat-tab>
         </mat-tab-group>

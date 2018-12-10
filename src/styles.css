@@ -50,6 +50,15 @@ html, body {
 .modal-title {
   cursor: pointer;
 }
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
 /* Custom styles of Angular Material table */
 tr.mat-header-row {
   display: flex;
@@ -170,6 +179,9 @@ th:last-of-type {
   transition: background-color 0.4s ease-in;
 }
 /*Custom styles Material Tabs*/
+.mat-tab-header {
+  margin-bottom: 30px;
+}
 .mat-tab-label .mat-tab-label-content {
   color: #FFF !important;
   text-transform: uppercase;
