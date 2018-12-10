@@ -17,14 +17,19 @@
 .title {
     text-transform: uppercase;
     font-size: 1.1em;
+    padding: 20px;
+    color: #fbd026;
+    font-weight: 700;
 }
 .text-green {
     display: flex;
     font-size: 0.95em;
     color: rgb(146, 212, 120);
+    padding: 20px;
 }
 .text-red {
     display: flex;
     font-size: 0.95em;
     color: rgb(209, 73, 73);
+    padding: 20px;
 }

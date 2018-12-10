@@ -1,7 +1,7 @@
+import { EventEmitter, Injectable, Output } from '@angular/core';
 import { ExchangeSummary } from './exchange-summary.model';
 import { ExchangeSummaryComponent } from 'src/app/main/modals/exchange-summary/exchange-summary.component';
 import { HttpClient } from '@angular/common/http';
-import { Injectable, Output, EventEmitter } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { Observable } from 'rxjs';
 
@@ -28,7 +28,7 @@ export class ExchangeSummaryService {
     openDialogExchangeSummary(): void {
       this.updateExchangeService.subscribe(retValue => {
         const dialogRef = this.dialog.open(ExchangeSummaryComponent, {
-          width: '300px',
+          width: '350px',
           data: {
             exchangeName: retValue.exchangeName,
             exchangeCurrency1: retValue.exchangeCurrency1,

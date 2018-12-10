@@ -242,7 +242,27 @@ th:last-of-type {
   background: #262728;
   color: #FFF;
   border-bottom: 5px solid #FBD026;
+  padding: 0 !important;
 }
 .mat-dialog-actions .mat-button {
   background: grey;
+}
+.mat-dialog-title {
+  margin: 0 !important;
+}
+.mat-dialog-content {
+  margin: 0 !important;
+  padding: 20px !important;
+}
+.mat-dialog-actions {
+  margin: 0 !important;
+  padding: 20px !important;
+  justify-content: space-between;
+}
+/*Angular material form styles*/
+.mat-form-field-infix {
+  width: 310px !important;
+}
+.mat-form-field-appearance-legacy .mat-form-field-label {
+  color: #808080;
 }

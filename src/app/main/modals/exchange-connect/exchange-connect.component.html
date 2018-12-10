@@ -1,16 +1,17 @@
-<h6 class="title" mat-dialog-title>Bittrex </h6>
+<h6 class="title" mat-dialog-title>{{data.exchangeName}} authorization</h6>
   <div mat-dialog-content>
-    <div class="dialog-row">
-      <div class="dialog-row-content">
-        <strong class="content-name">Last:</strong>
-        <div class="content-value"></div>
-      </div>
-      <div class="dialog-row-content">
-        <strong class="content-name">Volume:</strong>
-        <div class="content-value"></div>
-      </div>
-    </div>
+    <img class="imagegif" src="../../../../assets/auth-img.png">
+  </div>
+  <div mat-dialog-content>
+    <mat-form-field class="example-full-width">
+      <input [(ngModel)]="form.token" matInput placeholder="Enter a vaild private token" value="">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input [(ngModel)]="form.password" matInput placeholder="Enter password" value="">
+    </mat-form-field>
+    <p class="support-link">To get more information, open {{data.exchangeName}} support<i class="material-icons">open_in_new</i></p>
   </div>
   <div mat-dialog-actions>
     <button mat-button (click)="onNoClick()">Close</button>
+    <button mat-button (click)="onConnect()" class="button-brand">Connect</button>
   </div>

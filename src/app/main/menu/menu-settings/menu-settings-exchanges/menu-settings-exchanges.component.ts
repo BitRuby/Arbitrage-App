@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ExchangeConnectService } from 'src/app/core/modal/exchange-connect.service';
 
+
 @Component({
   selector: 'app-menu-settings-exchanges',
   templateUrl: './menu-settings-exchanges.component.html',
@@ -13,8 +14,8 @@ export class MenuSettingsExchangesComponent implements OnInit {
   ngOnInit() {
   }
 
-  private openModal(): void {
-    this.modalService.changeExchangeConnect();
+  private openModal(exchangeName: string): void {
+    this.modalService.changeExchangeConnect(exchangeName);
   }
 
 }

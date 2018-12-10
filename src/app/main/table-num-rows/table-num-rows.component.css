@@ -5,3 +5,6 @@ mat-form-field {
 :host {
     height: 40px;
 }
+:host ::ng-deep .mat-form-field-infix {
+    width: 180px !important;
+}
