@@ -3,12 +3,27 @@
 <div class="container">
     <app-table-num-rows></app-table-num-rows>
 </div>
+
+<div class="container" *ngFor="let data of marketList">
+    <div class="header">
+        <h2>{{data.primary}}/{{data.secondary}}</h2>
+    </div>
+    <div class="exchanges" *ngFor="let exchangeData of data.supported_exchanges">
+        <div><span (dblclick)="openModal(exchangeList[exchangeData-1]?.name, data?.primary, data?.secondary)" class="modal-title noselect">{{exchangeList[exchangeData-1]?.name}}</span></div>
+    </div>
+    <div class="data">
+        {{createComponent()}}
+        <ng-template #orderBookTable></ng-template>
+    </div>
+</div>
+
+<!-- 
 <div class="container">
     <div class="header">
         <h2>USD/BTC</h2>
     </div>
     <div class="exchanges">
-        <div><span (dblclick)="openModal('Bittrex', 'USD', 'BTC')" class="modal-title noselect noselect">Bittrex</span></div>
+        <div><span (dblclick)="openModal('Bittrex', 'USD', 'BTC')" class="modal-title noselect">Bittrex</span></div>
         <div><span (dblclick)="openModal('Bitfinex', 'USD', 'BTC')" class="modal-title noselect">Bitfinex</span></div>
         <div><span (dblclick)="openModal('Coinbase', 'USD', 'BTC')" class="modal-title noselect">Coinbase</span></div>
     </div>
@@ -81,6 +96,6 @@
     <div class="data">
         <app-order-book-usd-zec></app-order-book-usd-zec>
     </div>
-</div>
+</div> -->
 <app-footer></app-footer>
 <app-menu></app-menu>

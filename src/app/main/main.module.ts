@@ -89,7 +89,8 @@ import { FormsModule } from '@angular/forms';
   ],
   entryComponents: [
     ExchangeSummaryComponent,
-    ExchangeConnectComponent
+    ExchangeConnectComponent,
+    OrderBookUsdBtcComponent
   ]
 })
 export class MainModule { }

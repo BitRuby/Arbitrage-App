@@ -24,6 +24,8 @@ export class OrderBookUsdBtcComponent implements OnInit, AfterViewInit {
   displayedColumns: string[] = ['Price', 'Quantity'];
   dataSource = new Array<MatTableDataSource<OrderData>>();
   selected = new Map<Number, OrderData>();
+  currency1;
+  currency2;
   @ViewChildren(MatPaginator) paginator = new QueryList<MatPaginator>();
   @ViewChildren(MatSort) sort = new QueryList<MatSort>();
 
@@ -70,21 +72,19 @@ export class OrderBookUsdBtcComponent implements OnInit, AfterViewInit {
   }
 
   loadData(): void {
-    const currency1 = 'BTC';
-    const currency2 = 'USD';
-    this.ob.getOrderBookBittrex(currency1, currency2).subscribe(orders => {
+    this.ob.getOrderBookBittrex(this.currency1, this.currency2).subscribe(orders => {
       if (orders === null) { return; }
       this.dataSource[0] = new MatTableDataSource(orders.Asks);
       this.dataSource[0].sort = this.sort.toArray()[0];
       this.dataSource[0].paginator = this.paginator.toArray()[0];
     });
-    this.ob.getOrderBookBitfinex(currency1, currency2).subscribe(orders => {
+    this.ob.getOrderBookBitfinex(this.currency1, this.currency2).subscribe(orders => {
       if (orders === null) { return; }
       this.dataSource[1] = new MatTableDataSource(orders.Asks);
       this.dataSource[1].sort = this.sort.toArray()[1];
       this.dataSource[1].paginator = this.paginator.toArray()[1];
     });
-    this.ob.getOrderBookCoinbase(currency1, currency2).subscribe(orders => {
+    this.ob.getOrderBookCoinbase(this.currency1, this.currency2).subscribe(orders => {
       if (orders === null) { return; }
       this.dataSource[2] = new MatTableDataSource(orders.Asks);
       this.dataSource[2].sort = this.sort.toArray()[2];
