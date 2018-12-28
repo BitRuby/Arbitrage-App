@@ -1,4 +1,6 @@
 export interface ExchangeName {
+    id: number;
     name: string;
-    error: string;
+    buyFee: number;
+    sellFee: number;
 }

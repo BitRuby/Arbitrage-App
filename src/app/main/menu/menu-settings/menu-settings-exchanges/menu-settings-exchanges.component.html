@@ -1,24 +1,6 @@
 <div class="flex-container">
-  <div class="element noselect" (dblclick)="openModal('Bittrex')">
-    <div class="title">Bittrex</div>
-    <div class="alerts">
-        <i class="material-icons">highlight_off</i>
-    </div>
-  </div>
-  <div class="element noselect" (dblclick)="openModal('Bitfinex')">
-    <div class="title">Bitfinex</div>
-    <div class="alerts">
-        <i class="material-icons">highlight_off</i>
-    </div>
-  </div>
-  <div class="element noselect" (dblclick)="openModal('Coinbase')">
-    <div class="title">Coinbase</div>
-    <div class="alerts">
-        <i class="material-icons">highlight_off</i>
-    </div>
-  </div>
-  <div class="element noselect" (dblclick)="openModal('Kraken')">
-    <div class="title">Kraken</div>
+  <div class="element noselect" *ngFor="let exchange of exchangeList" (dblclick)="openModal(exchange.name)">
+    <div class="title">{{exchange.name}}</div>
     <div class="alerts">
         <i class="material-icons">highlight_off</i>
     </div>

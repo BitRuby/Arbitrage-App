@@ -1,7 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Order } from './order.model';
-import { HttpClient } from '@angular/common/http';
+import { OrderBookData } from './order-book-data.model';
 
 @Injectable({
   providedIn: 'root'
@@ -25,5 +26,9 @@ export class OrderBookService {
   getOrderBookKraken(c1: string, c2: string): Observable<Order> {
     const url = `http://localhost:8000/api/kraken/orderbook/${c1}/${c2}`;
     return this.httpClient.get<Order>(url);
+  }
+  getOrderBook(id: Number): Observable<OrderBookData[]> {
+    const url = `http://localhost:8000/api/orderbook/${id}`;
+    return this.httpClient.get<OrderBookData[]>(url);
   }
 }

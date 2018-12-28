@@ -27,7 +27,7 @@ html, body {
   flex-direction: row;
 }
 .container > .exchanges > * {
-  margin: 0 5px 0 15px;
+  margin: 0 5px 0 5px;
   padding: 10px 0;
   width: 310px;
 }
@@ -37,9 +37,7 @@ html, body {
 .container > .data {
   display: flex;
 }
-.container > .data > * {
-  display: flex;
-}
+
 .container > .data > *:first-child {
   margin-left: 0 !important;
 }

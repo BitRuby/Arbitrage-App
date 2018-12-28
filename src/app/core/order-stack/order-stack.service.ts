@@ -9,17 +9,19 @@ export class OrderStackService {
 
   orderStack: Map<Number, Stack> = new Map;
   selectedOrders: Map<Number, OrderData> = new Map;
+  exchangesSize = 4;
 
   constructor() { }
 
   pushOrder(order: Stack): void {
-    this.orderStack.set(order.exchangeId * order.marketId, order);
-    console.log(this.orderStack);
+    const calculatedId = ((order.marketId - 1) * this.exchangesSize + order.exchangeId);
+    this.orderStack.set(calculatedId, order);
   }
 
-  popOrder(orderId: Number): void {
-    this.orderStack.delete(orderId);
-    this.selectedOrders.delete(orderId);
+  popOrder(marketId: number, exchangeId: number): void {
+    const calculatedId = ((marketId - 1) * this.exchangesSize + exchangeId);
+    this.orderStack.delete(calculatedId);
+    this.selectedOrders.delete(calculatedId);
   }
 
   getOrder(orderId: Number): Stack {
@@ -34,7 +36,7 @@ export class OrderStackService {
   getOrders(marketId: number): Array<Stack> {
     const array = new Array<Stack>();
     const loadToArray = function(value, key, map) {
-      if (value.exchangeId === marketId) { array.push(value); }
+      if (value.marketId === marketId) { array.push(value); }
     };
     this.orderStack.forEach(loadToArray);
     return array;
@@ -50,7 +52,8 @@ export class OrderStackService {
   }
 
   saveSelected(order: Stack, orderData: OrderData) {
-    this.selectedOrders.set(order.marketId * order.exchangeId, orderData);
+    const calculatedId = ((order.marketId - 1) * this.exchangesSize + order.exchangeId);
+    this.selectedOrders.set(calculatedId, orderData);
   }
 
 

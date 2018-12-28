@@ -12,13 +12,9 @@ export class ExchangeService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getExchangeName(exchangeId: number): Observable<ExchangeName> {
-    const url = `http://localhost:8000/api/exchange/name/${exchangeId}`;
+  getExchangeDetails(exchangeId: number): Observable<ExchangeName> {
+    const url = `http://localhost:8000/api/exchange/${exchangeId}`;
     return this.httpClient.get<ExchangeName>(url);
-  }
-  getExchangeFees(exchangeId: number): Observable<ExchangeFee> {
-    const url = `http://localhost:8000/api/exchange/fee/${exchangeId}`;
-    return this.httpClient.get<ExchangeFee>(url);
   }
 
 }

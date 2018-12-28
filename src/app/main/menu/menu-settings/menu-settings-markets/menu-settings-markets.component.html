@@ -1,7 +1,8 @@
 <div class="flex-container">
-    <div class="element">
-      <div class="title">USD</div>
-      <div class="alerts">
-      </div>
+<div class="element noselect" *ngFor="let market of marketList">
+    <div class="title">{{market.primary}}/{{market.secondary}}</div>
+    <div class="alerts">
+        <i class="material-icons">highlight_off</i>
     </div>
+  </div>
 </div>

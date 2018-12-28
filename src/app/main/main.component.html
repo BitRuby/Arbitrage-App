@@ -1,101 +1,17 @@
 <app-header id="destination" #destinationRef></app-header>
-<div class="space"></div>
-<div class="container">
-    <app-table-num-rows></app-table-num-rows>
-</div>
-
-<div class="container" *ngFor="let data of marketList">
-    <div class="header">
-        <h2>{{data.primary}}/{{data.secondary}}</h2>
+    <div class="space">
+        
     </div>
-    <div class="exchanges" *ngFor="let exchangeData of data.supported_exchanges">
-        <div><span (dblclick)="openModal(exchangeList[exchangeData-1]?.name, data?.primary, data?.secondary)" class="modal-title noselect">{{exchangeList[exchangeData-1]?.name}}</span></div>
+    <div class="container">
+        <app-table-num-rows></app-table-num-rows>
     </div>
-    <div class="data">
-        {{createComponent()}}
-        <ng-template #orderBookTable></ng-template>
-    </div>
-</div>
-
-<!-- 
-<div class="container">
-    <div class="header">
-        <h2>USD/BTC</h2>
-    </div>
-    <div class="exchanges">
-        <div><span (dblclick)="openModal('Bittrex', 'USD', 'BTC')" class="modal-title noselect">Bittrex</span></div>
-        <div><span (dblclick)="openModal('Bitfinex', 'USD', 'BTC')" class="modal-title noselect">Bitfinex</span></div>
-        <div><span (dblclick)="openModal('Coinbase', 'USD', 'BTC')" class="modal-title noselect">Coinbase</span></div>
-    </div>
-    <div class="data">
-        <app-order-book-usd-btc></app-order-book-usd-btc>
-    </div>
-</div>
-<div class="container">
-    <div class="header">
-        <h2>USD/ETH</h2>
-    </div>
-    <div class="exchanges">
-        <div><span (dblclick)="openModal('Bittrex', 'USD', 'ETH')" class="modal-title noselect">Bittrex</span></div>
-        <div><span (dblclick)="openModal('Bitfinex', 'USD', 'ETH')" class="modal-title noselect">Bitfinex</span></div>
-        <div><span (dblclick)="openModal('Coinbase', 'USD', 'ETH')" class="modal-title noselect">Coinbase</span></div>
-        <div><span (dblclick)="openModal('Kraken', 'USD', 'ETH')" class="modal-title noselect">Kraken</span></div>
-    </div>
-    <div class="data">
-        <app-order-book-usd-eth></app-order-book-usd-eth>
-    </div>
-</div>
-<div class="container">
-    <div class="header">
-        <h2>USD/LTC</h2>
-    </div>
-    <div class="exchanges">
-        <div><span (dblclick)="openModal('Bittrex', 'USD', 'LTC')" class="modal-title noselect">Bittrex</span></div>
-        <div><span (dblclick)="openModal('Bitfinex', 'USD', 'LTC')" class="modal-title noselect">Bitfinex</span></div>
-        <div><span (dblclick)="openModal('Coinbase', 'USD', 'LTC')" class="modal-title noselect">Coinbase</span></div>
-        <div><span (dblclick)="openModal('Kraken', 'USD', 'LTC')" class="modal-title noselect">Kraken</span></div>
-    </div>
-    <div class="data">
-        <app-order-book-usd-ltc></app-order-book-usd-ltc>
-    </div>
-</div>
-<div class="container">
-    <div class="header">
-        <h2>USD/XRP</h2>
-    </div>
-    <div class="exchanges">
-        <div><span (dblclick)="openModal('Bittrex', 'USD', 'XRP')" class="modal-title noselect">Bittrex</span></div>
-        <div><span (dblclick)="openModal('Bitfinex', 'USD', 'XRP')" class="modal-title noselect">Bitfinex</span></div>
-        <div><span (dblclick)="openModal('Kraken', 'USD', 'XRP')" class="modal-title noselect">Kraken</span></div>
-    </div>
-    <div class="data">
-        <app-order-book-usd-xrp></app-order-book-usd-xrp>
-    </div>
-</div>
-<div class="container">
-    <div class="header">
-        <h2>USD/ADA</h2>
-    </div>
-    <div class="exchanges">
-        <div><span (dblclick)="openModal('Bittrex', 'USD', 'ADA')" class="modal-title noselect">Bittrex</span></div>
-        <div><span (dblclick)="openModal('Kraken', 'USD', 'ADA')" class="modal-title noselect">Kraken</span></div>
-    </div>
-    <div class="data">
-        <app-order-book-usd-ada></app-order-book-usd-ada>
-    </div>
-</div>
-<div class="container">
-    <div class="header">
-        <h2>USD/ZEC</h2>
-    </div>
-    <div class="exchanges">
-        <div><span (dblclick)="openModal('Bittrex', 'USD', 'ZEC')" class="modal-title noselect">Bittrex</span></div>
-        <div><span (dblclick)="openModal('Bitfinex', 'USD', 'ZEC')" class="modal-title noselect">Bitfinex</span></div>
-        <div><span (dblclick)="openModal('Kraken', 'USD', 'ZEC')" class="modal-title noselect">Kraken</span></div>
-    </div>
-    <div class="data">
-        <app-order-book-usd-zec></app-order-book-usd-zec>
-    </div>
-</div> -->
+    <app-book-usdt-btc></app-book-usdt-btc>
+    <app-book-usdt-eth></app-book-usdt-eth>
+    <app-book-usdt-ltc></app-book-usdt-ltc>
+    <app-book-usdt-xrp></app-book-usdt-xrp>
+    <app-book-usdt-zec></app-book-usdt-zec>
+    <app-book-usdt-ada></app-book-usdt-ada>
+    <app-book-usdt-bch></app-book-usdt-bch>
+    <app-book-usdt-xmr></app-book-usdt-xmr>
 <app-footer></app-footer>
 <app-menu></app-menu>
