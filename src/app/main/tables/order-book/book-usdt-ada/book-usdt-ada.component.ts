@@ -53,6 +53,10 @@ export class BookUsdtAdaComponent implements OnInit, AfterViewInit {
       this.dataSource[1].paginator._changePageSize(val);
       this.dataSource[2].paginator._changePageSize(val);
       this.dataSource[3].paginator._changePageSize(val);
+      this.dataSource[4].paginator._changePageSize(val);
+      this.dataSource[5].paginator._changePageSize(val);
+      this.dataSource[6].paginator._changePageSize(val);
+      this.dataSource[7].paginator._changePageSize(val);
     });
   }
 
@@ -60,7 +64,7 @@ export class BookUsdtAdaComponent implements OnInit, AfterViewInit {
     this.selected = this.os.selectedOrders;
   }
 
-  private push(element: OrderData, exchangeId: number) {
+  private push(element: OrderData, exchangeId: number, type: string) {
     const calculatedId = ((this.marketId - 1) * this.exchangesSize + exchangeId);
     if (this.os.isSelected(calculatedId)) {
       this.os.popOrder(this.marketId, exchangeId);
@@ -71,6 +75,7 @@ export class BookUsdtAdaComponent implements OnInit, AfterViewInit {
     order.marketId = this.marketId;
     order.price = element.Price;
     order.quantity = element.Quantity;
+    order.type = type;
     this.ex.getExchangeDetails(exchangeId).subscribe(ret => {
       order.exchangeName = ret.name;
       order.exchangeFees = ret.sellFee;
@@ -87,6 +92,9 @@ export class BookUsdtAdaComponent implements OnInit, AfterViewInit {
           this.dataSource[i] = new MatTableDataSource(ret[i].data.Asks);
           this.dataSource[i].sort = this.sort.toArray()[i];
           this.dataSource[i].paginator = this.paginator.toArray()[i];
+          this.dataSource[i + ret.length] = new MatTableDataSource(ret[i].data.Bids);
+          this.dataSource[i + ret.length].sort = this.sort.toArray()[i + ret.length];
+          this.dataSource[i + ret.length].paginator = this.paginator.toArray()[i + ret.length];
         }
     });
   }

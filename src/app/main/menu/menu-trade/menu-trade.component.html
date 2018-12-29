@@ -16,6 +16,7 @@
           <div class="item-title">Price</div>
           <div class="item-title">Quantity</div>
           <div class="item-title">Service Fee</div>
+          <div class="item-title">Type</div>
           <div class="item-title">Actions</div>
         </div>
       </mat-list-item>
@@ -25,6 +26,7 @@
           <div class="item">{{item.price | currency:'USD' :'symbol':'.3-3'}}</div>
           <div class="item">{{item.quantity}}</div>
           <div class="item">{{item.exchangeFees}}</div>
+          <div class="item">{{item.type}}</div>
           <div class="item"><i class="material-icons" (click)="deleteOrder(item.marketId, item.exchangeId)">remove_circle_outline</i></div>
         </div>
         <mat-divider></mat-divider>

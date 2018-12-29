@@ -5,4 +5,5 @@ export interface Stack {
     exchangeId?: number;
     price?: number | string;
     quantity?: number | string;
+    type?: string;
 }

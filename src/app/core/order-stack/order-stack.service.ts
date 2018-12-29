@@ -9,7 +9,7 @@ export class OrderStackService {
 
   orderStack: Map<Number, Stack> = new Map;
   selectedOrders: Map<Number, OrderData> = new Map;
-  exchangesSize = 4;
+  exchangesSize = 8;
 
   constructor() { }
 
