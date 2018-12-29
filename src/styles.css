@@ -96,7 +96,7 @@ tr.mat-row {
   flex-direction: column;
   margin: 15px 5px;
   margin-top: 0;
-  height: 70px !important;
+  height: 60px !important;
   -webkit-transition: background-color 0.4s ease-in;
   transition: background-color 0.4s ease-in;
   cursor: pointer;
@@ -108,7 +108,7 @@ td.mat-cell:last-of-type {
   text-align: center;
 }
 td.mat-cell:first-of-type {
-  font-size: 1.7em;
+  font-size: 1.4em;
   font-weight: 700;
   padding-top: 10px !important;
 }
@@ -132,8 +132,8 @@ th:last-of-type {
   background: #FBD026;
   color: #FFF;
   margin: 5px;
-  width: 150px;
-  height: 40px;
+  width: 70px;
+  height: 30px;
   padding: 0 !important;
   border-bottom-style: none;
   font-size: 12px;
@@ -163,7 +163,7 @@ th:last-of-type {
 }
 .table-row td:first-of-type {
   font-weight: 700;
-  font-size: 1.7em;
+  font-size: 1.4em;
   padding-top: 10px !important;
 }
 .table-row td:last-of-type {
