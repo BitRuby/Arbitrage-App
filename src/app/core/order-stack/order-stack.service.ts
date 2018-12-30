@@ -20,7 +20,6 @@ export class OrderStackService {
     this.orderStack.set(calculatedId, order);
     this.updateOrderStack.emit(this.orderStack);
     this.updateSelectedOrders.emit(this.selectedOrders);
-    console.log(this.calculateArbitrage(this.findMinAndMax(order.marketId)));
   }
 
   popOrder(marketId: number, exchangeId: number): void {
@@ -93,9 +92,9 @@ export class OrderStackService {
     return arbitrage;
   }
 
-  calculateArbitrage(orders: Arbitrage, quantity: number = 0): number {
+  calculateArbitrage(orders: Arbitrage, quantity: number = 0): Arbitrage {
     if ( (orders.maxBid === null) || (orders.minAsk === null) ) {
-       return 0;
+       return orders;
     } else {
        const bidFee = orders.maxBid.price * (orders.maxBid.exchangeFees / 100);
        const askFee = orders.minAsk.price * (orders.minAsk.exchangeFees / 100);
@@ -105,13 +104,21 @@ export class OrderStackService {
          if (typeof orders.maxBid.quantity === 'string') { orders.maxBid.quantity = parseFloat(orders.maxBid.quantity); }
          if (typeof orders.minAsk.quantity === 'string') { orders.minAsk.quantity = parseFloat(orders.minAsk.quantity); }
          if (orders.maxBid.quantity < orders.minAsk.quantity) {
-            return orders.maxBid.quantity * calculated;
+            orders.arbitrage = orders.maxBid.quantity * calculated;
+            orders.maxQuantity = orders.maxBid.quantity;
          } else {
-            return orders.minAsk.quantity * calculated;
+            orders.arbitrage = orders.minAsk.quantity * calculated;
+            orders.maxQuantity = orders.minAsk.quantity;
          }
        } else {
-        return quantity * calculated;
+        orders.arbitrage =  quantity * calculated;
+          if (orders.maxBid.quantity < orders.minAsk.quantity) {
+            orders.maxQuantity = orders.maxBid.quantity;
+        } else {
+            orders.maxQuantity = orders.minAsk.quantity;
+        }
        }
+       return orders;
     }
   }
 

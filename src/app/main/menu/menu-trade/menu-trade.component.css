@@ -31,3 +31,9 @@
 ::-webkit-scrollbar { 
     display: none; 
 }
+.menu-arbitrage {
+    color: #AAA !important;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, registerLocaleData } from '@angular/common';
 import { ExchangeConnectComponent } from './modals/exchange-connect/exchange-connect.component';
 import { ExchangeConnectService } from '../core/modal/exchange-connect.service';
 import { ExchangeSummaryComponent } from './modals/exchange-summary/exchange-summary.component';
@@ -39,7 +39,9 @@ import { BookUsdtZecComponent } from './tables/order-book/book-usdt-zec/book-usd
 import { BookUsdtAdaComponent } from './tables/order-book/book-usdt-ada/book-usdt-ada.component';
 import { BookUsdtXmrComponent } from './tables/order-book/book-usdt-xmr/book-usdt-xmr.component';
 import { BookUsdtBchComponent } from './tables/order-book/book-usdt-bch/book-usdt-bch.component';
+import localePl from '@angular/common/locales/pl';
 
+registerLocaleData(localePl);
 
 
 
