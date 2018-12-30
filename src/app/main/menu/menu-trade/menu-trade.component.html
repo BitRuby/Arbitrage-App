@@ -6,10 +6,10 @@
   <mat-expansion-panel [expanded]="allExpandState" *ngFor="let market of marketList">
     <mat-expansion-panel-header>
       <mat-panel-title>
-        {{market.primary}}/{{market.secondary}} ({{getOrders(market.id).length}} selected)
+        {{market.primary}}/{{market.secondary}} ({{getOrders(market.id)?.length}} selected)
       </mat-panel-title>
     </mat-expansion-panel-header>
-    <mat-list *ngIf="getOrders(market.id).length > 0">
+    <mat-list *ngIf="getOrders(market.id)?.length > 0">
     <mat-list-item>
         <div class="list-container">
           <div class="item-title">Exchange</div>
@@ -22,12 +22,12 @@
       </mat-list-item>
       <mat-list-item *ngFor="let item of getOrders(market.id)">
         <div class="list-container">
-          <div class="item">{{item.exchangeName}}</div>
-          <div class="item">{{item.price | currency:'USD' :'symbol':'.3-3'}}</div>
-          <div class="item">{{item.quantity}}</div>
-          <div class="item">{{item.exchangeFees}}</div>
-          <div class="item">{{item.type}}</div>
-          <div class="item"><i class="material-icons" (click)="deleteOrder(item.marketId, item.exchangeId)">remove_circle_outline</i></div>
+          <div class="item">{{item?.exchangeName}}</div>
+          <div class="item">{{item?.price | currency:'USD' :'symbol':'.3-3'}}</div>
+          <div class="item">{{item?.quantity}}</div>
+          <div class="item">{{item?.exchangeFees}}</div>
+          <div class="item">{{item?.type}}</div>
+          <div class="item"><i class="material-icons" (click)="deleteOrder(item?.marketId, item?.exchangeId)">remove_circle_outline</i></div>
         </div>
         <mat-divider></mat-divider>
       </mat-list-item>

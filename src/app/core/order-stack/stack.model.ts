@@ -3,7 +3,7 @@ export interface Stack {
     exchangeName?: string;
     exchangeFees?: number;
     exchangeId?: number;
-    price?: number | string;
-    quantity?: number | string;
+    price?: number;
+    quantity?: number;
     type?: string;
 }

@@ -1,13 +1,15 @@
-import { Injectable } from '@angular/core';
-import { Stack } from './stack.model';
+import { Arbitrage } from './arbitrage.model';
+import { EventEmitter, Injectable, Output } from '@angular/core';
 import { OrderData } from '../order-book/order-data.model';
+import { Stack } from './stack.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class OrderStackService {
-
+  @Output() updateOrderStack: EventEmitter<Map<Number, Stack>> = new EventEmitter();
   orderStack: Map<Number, Stack> = new Map;
+  @Output() updateSelectedOrders: EventEmitter<Map<Number, OrderData>> = new EventEmitter();
   selectedOrders: Map<Number, OrderData> = new Map;
   exchangesSize = 8;
 
@@ -16,12 +18,17 @@ export class OrderStackService {
   pushOrder(order: Stack): void {
     const calculatedId = ((order.marketId - 1) * this.exchangesSize + order.exchangeId);
     this.orderStack.set(calculatedId, order);
+    this.updateOrderStack.emit(this.orderStack);
+    this.updateSelectedOrders.emit(this.selectedOrders);
+    console.log(this.calculateArbitrage(this.findMinAndMax(order.marketId)));
   }
 
   popOrder(marketId: number, exchangeId: number): void {
     const calculatedId = ((marketId - 1) * this.exchangesSize + exchangeId);
     this.orderStack.delete(calculatedId);
     this.selectedOrders.delete(calculatedId);
+    this.updateOrderStack.emit(this.orderStack);
+    this.updateSelectedOrders.emit(this.selectedOrders);
   }
 
   getOrder(orderId: Number): Stack {
@@ -54,6 +61,67 @@ export class OrderStackService {
   saveSelected(order: Stack, orderData: OrderData) {
     const calculatedId = ((order.marketId - 1) * this.exchangesSize + order.exchangeId);
     this.selectedOrders.set(calculatedId, orderData);
+  }
+
+  findMinAndMax(marketId: number): Arbitrage {
+    const array = this.getOrders(marketId);
+    let highest: Stack = {};
+    highest.price = Number.NEGATIVE_INFINITY;
+    let tmp;
+    for (let i = array.length - 1; i >= 0; i--) {
+        tmp = array[i];
+        tmp.price = parseFloat(tmp.price);
+        if (tmp.type === 'ask') { continue; }
+        if (tmp.price > highest.price) { highest = tmp; }
+    }
+    let lowest: Stack = {};
+    lowest.price = Number.POSITIVE_INFINITY;
+    for (let i = array.length - 1; i >= 0; i--) {
+      tmp = array[i];
+      tmp.price = parseFloat(tmp.price);
+      if (tmp.type === 'bid') { continue; }
+      if (tmp.price < lowest.price) { lowest = tmp; }
+    }
+    if (lowest.price === Number.POSITIVE_INFINITY) {
+      lowest = null;
+    }
+    if (highest.price === Number.NEGATIVE_INFINITY) {
+      highest = null;
+    }
+    const arbitrage: Arbitrage = {minAsk: lowest,
+      maxBid: highest};
+    return arbitrage;
+  }
+
+  calculateArbitrage(orders: Arbitrage, quantity: number = 0): number {
+    if ( (orders.maxBid === null) || (orders.minAsk === null) ) {
+       return 0;
+    } else {
+       const bidFee = orders.maxBid.price * (orders.maxBid.exchangeFees / 100);
+       const askFee = orders.minAsk.price * (orders.minAsk.exchangeFees / 100);
+       const calculated = ( orders.maxBid.price - bidFee ) - ( orders.minAsk.price + askFee );
+
+       if (quantity === 0) {
+         if (typeof orders.maxBid.quantity === 'string') { orders.maxBid.quantity = parseFloat(orders.maxBid.quantity); }
+         if (typeof orders.minAsk.quantity === 'string') { orders.minAsk.quantity = parseFloat(orders.minAsk.quantity); }
+         if (orders.maxBid.quantity < orders.minAsk.quantity) {
+            return orders.maxBid.quantity * calculated;
+         } else {
+            return orders.minAsk.quantity * calculated;
+         }
+       } else {
+        return quantity * calculated;
+       }
+    }
+  }
+
+  isEmpty(obj): boolean {
+    for ( const key in obj ) {
+        if ( obj.hasOwnProperty(key) ) {
+            return false;
+        }
+    }
+    return true;
   }
 
 

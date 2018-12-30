@@ -19,10 +19,12 @@ export class MenuTradeComponent implements OnInit {
   panelOpenState: Boolean = false;
   allExpandState = true;
   marketList: MarketArray[];
+  orderList = new Map<Number, Stack>();
   constructor(private os: OrderStackService, private es: ExchangeService, private ms: MarketListService) { }
 
   ngOnInit() {
     this.getMarkets();
+    this.getAllOrders();
   }
 
   getMarkets(): void {
@@ -31,8 +33,19 @@ export class MenuTradeComponent implements OnInit {
     });
   }
 
+  getAllOrders(): void {
+    this.os.updateOrderStack.subscribe(val => {
+      this.orderList = val;
+    });
+  }
+
   getOrders(marketId: number): Array<Stack> {
-    return this.os.getOrders(marketId);
+    const array = new Array<Stack>();
+    const loadToArray = function(value, key, map) {
+      if (value.marketId === marketId) { array.push(value); }
+    };
+    this.orderList.forEach(loadToArray);
+    return array;
   }
 
   deleteOrder(marketId: number, exchangeId: number) {

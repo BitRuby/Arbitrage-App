@@ -75,9 +75,9 @@ export class BookUsdtBchComponent implements OnInit, AfterViewInit {
     this.ex.getExchangeDetails(exchangeId).subscribe(ret => {
       order.exchangeName = ret.name;
       order.exchangeFees = ret.sellFee;
+      this.os.pushOrder(order);
+      this.os.saveSelected(order, element);
     });
-    this.os.pushOrder(order);
-    this.os.saveSelected(order, element);
   }
 
   loadData(): void {
