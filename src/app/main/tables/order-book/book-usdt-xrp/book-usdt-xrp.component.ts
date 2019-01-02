@@ -87,14 +87,14 @@ export class BookUsdtXrpComponent implements OnInit, AfterViewInit {
   loadData(): void {
     this.ob.getOrderBook(this.marketId).subscribe(ret => {
       if (ret === null) { return; }
-        for (let i = 0; i < ret.length; i++) {
+        for (let i = 0; i < 4; i++) {
           this.nameSource[i] = ret[i].name;
           this.dataSource[i] = new MatTableDataSource(ret[i].data.Asks);
           this.dataSource[i].sort = this.sort.toArray()[i];
           this.dataSource[i].paginator = this.paginator.toArray()[i];
-          this.dataSource[i + ret.length] = new MatTableDataSource(ret[i].data.Bids);
-          this.dataSource[i + ret.length].sort = this.sort.toArray()[i + ret.length];
-          this.dataSource[i + ret.length].paginator = this.paginator.toArray()[i + ret.length];
+          this.dataSource[i + 4] = new MatTableDataSource(ret[i].data.Bids);
+          this.dataSource[i + 4].sort = this.sort.toArray()[i + 4];
+          this.dataSource[i + 4].paginator = this.paginator.toArray()[i + 4];
         }
     });
   }

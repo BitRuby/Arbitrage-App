@@ -40,6 +40,7 @@ import { BookUsdtAdaComponent } from './tables/order-book/book-usdt-ada/book-usd
 import { BookUsdtXmrComponent } from './tables/order-book/book-usdt-xmr/book-usdt-xmr.component';
 import { BookUsdtBchComponent } from './tables/order-book/book-usdt-bch/book-usdt-bch.component';
 import localePl from '@angular/common/locales/pl';
+import { BookUsdtNanoComponent } from './tables/order-book/book-usdt-nano/book-usdt-nano.component';
 
 registerLocaleData(localePl);
 
@@ -67,7 +68,8 @@ registerLocaleData(localePl);
     BookUsdtZecComponent,
     BookUsdtAdaComponent,
     BookUsdtXmrComponent,
-    BookUsdtBchComponent
+    BookUsdtBchComponent,
+    BookUsdtNanoComponent
   ],
   imports: [
     CommonModule,
