@@ -16,7 +16,7 @@
         <div class="list-container">
           <div class="item-title">Currency</div>
           <div class="item-title">Balance</div>
-          <div class="item-title">Quantity</div>
+          <div class="item-title">Available</div>
         </div>
       </mat-list-item>
       <div *ngFor="let row of userBalances[exchange?.id]">
@@ -24,7 +24,7 @@
           <div class="list-container">
             <div class="item">{{row?.Currency}}</div>
             <div class="item">{{row?.Balance}}</div>
-            <div class="item">{{row?.Quantity}}</div>
+            <div class="item">{{row?.Available}}</div>
           </div>
           <mat-divider></mat-divider>
         </mat-list-item>
