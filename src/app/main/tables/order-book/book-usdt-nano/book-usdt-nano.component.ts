@@ -1,4 +1,10 @@
-import { Component, OnInit, AfterViewInit, ViewChildren, QueryList } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  AfterViewInit,
+  ViewChildren,
+  QueryList
+} from '@angular/core';
 import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 import { OrderData } from 'src/app/core/order-book/order-data.model';
 import { OrderBookService } from 'src/app/core/order-book/order-book.service';
@@ -14,7 +20,6 @@ import { Stack } from 'src/app/core/order-stack/stack.model';
   styleUrls: ['./book-usdt-nano.component.css']
 })
 export class BookUsdtNanoComponent implements OnInit, AfterViewInit {
-
   marketId = 9;
   displayedColumns: string[] = ['Price', 'Quantity'];
   dataSource = new Array<MatTableDataSource<OrderData>>();
@@ -24,9 +29,13 @@ export class BookUsdtNanoComponent implements OnInit, AfterViewInit {
   @ViewChildren(MatPaginator) paginator = new QueryList<MatPaginator>();
   @ViewChildren(MatSort) sort = new QueryList<MatSort>();
 
-  constructor(private ob: OrderBookService, private os: OrderStackService, private ex: ExchangeService, private tnr: TableNumRowsService,
-    private ms: ExchangeSummaryService) {
-  }
+  constructor(
+    private ob: OrderBookService,
+    private os: OrderStackService,
+    private ex: ExchangeService,
+    private tnr: TableNumRowsService,
+    private ms: ExchangeSummaryService
+  ) {}
 
   ngOnInit() {
     this.associateSelectedOrders();
@@ -34,11 +43,13 @@ export class BookUsdtNanoComponent implements OnInit, AfterViewInit {
     this.loadData();
     this.exchangesSize = this.os.exchangesSize;
   }
-  ngAfterViewInit(): void {
+  ngAfterViewInit(): void {}
 
-  }
-
-  private openModal(exchangeName: string, currency1: string, currency2: string): void {
+  private openModal(
+    exchangeName: string,
+    currency1: string,
+    currency2: string
+  ): void {
     this.ms.changeExchangeSummary(exchangeName, currency1, currency2);
   }
 
@@ -56,7 +67,7 @@ export class BookUsdtNanoComponent implements OnInit, AfterViewInit {
   }
 
   private push(element: OrderData, exchangeId: number, type: string) {
-    const calculatedId = ((this.marketId - 1) * this.exchangesSize + exchangeId);
+    const calculatedId = (this.marketId - 1) * this.exchangesSize + exchangeId;
     if (this.os.isSelected(calculatedId)) {
       this.os.popOrder(this.marketId, exchangeId);
       return;
@@ -77,18 +88,18 @@ export class BookUsdtNanoComponent implements OnInit, AfterViewInit {
 
   loadData(): void {
     this.ob.getOrderBook(this.marketId).subscribe(ret => {
-      // tslint:disable-next-line:no-debugger
-      debugger;
-      if (ret === null) { return; }
-        for (let i = 0; i < 2; i++) {
-          this.nameSource[i] = ret[i].name;
-          this.dataSource[i] = new MatTableDataSource(ret[i].data.Asks);
-          this.dataSource[i].sort = this.sort.toArray()[i];
-          this.dataSource[i].paginator = this.paginator.toArray()[i];
-          this.dataSource[i + 2] = new MatTableDataSource(ret[i].data.Bids);
-          this.dataSource[i + 2].sort = this.sort.toArray()[i + 2];
-          this.dataSource[i + 2].paginator = this.paginator.toArray()[i + 2];
-        }
+      if (ret === null) {
+        return;
+      }
+      for (let i = 0; i < 2; i++) {
+        this.nameSource[i] = ret[i].name;
+        this.dataSource[i] = new MatTableDataSource(ret[i].data.Asks);
+        this.dataSource[i].sort = this.sort.toArray()[i];
+        this.dataSource[i].paginator = this.paginator.toArray()[i];
+        this.dataSource[i + 2] = new MatTableDataSource(ret[i].data.Bids);
+        this.dataSource[i + 2].sort = this.sort.toArray()[i + 2];
+        this.dataSource[i + 2].paginator = this.paginator.toArray()[i + 2];
+      }
     });
   }
 }
