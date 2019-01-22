@@ -1,6 +1,6 @@
 import { EventEmitter, Injectable, Output } from '@angular/core';
 import { ExchangeSummary } from './exchange-summary.model';
-import { ExchangeSummaryComponent } from 'src/app/main/modals/exchange-summary/exchange-summary.component';
+import { ExchangeSummaryComponent } from 'src/app/modals/exchange-summary/exchange-summary.component';
 import { HttpClient } from '@angular/common/http';
 import { MatDialog } from '@angular/material';
 import { Observable } from 'rxjs';
